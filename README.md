@@ -4,7 +4,7 @@
 
 ![Play market](https://raw.githubusercontent.com/akvelon/Bitbuckler-Android/main/images/Bitbuckler-screenshot.png)
 
-This app use [Bitbucket REST API](https://developer.atlassian.com/server/bitbucket/rest/v810/intro/#about) for implementing all the features.
+This app use [Bitbucket REST API](https://developer.atlassian.com/server/bitbucket/rest/v810/intro/#about) for implementing most of features.
 
 ## Features
 
