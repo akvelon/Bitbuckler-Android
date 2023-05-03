@@ -1,6 +1,22 @@
-# Bitbuckler Android client
+## About this app
 
 [Bitbuckler](https://play.google.com/store/apps/details?id=com.akvelon.bitbuckler&hl=en&gl=US) – a convenient and user-friendly mobile client for Bitbucket. 
+
+![Play market](https://raw.githubusercontent.com/akvelon/Bitbuckler-Android/main/images/Bitbuckler-screenshot.png)
+
+This app use [Bitbucket REST API](https://developer.atlassian.com/server/bitbucket/rest/v810/intro/#about) for implementing all the features.
+
+## Features
+
+* Authorization
+* Pull requests
+* Repositories
+* Tracking repositories
+* Code reviewing
+* Issue tracker
+* Commenting
+* Premium 
+* Donations
 
 ## Installation
 
