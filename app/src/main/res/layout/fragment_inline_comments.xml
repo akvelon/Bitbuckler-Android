@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 04 February 2021
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/comments" />
+
+        <View
+            android:id="@+id/toolbarDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:background="?android:attr/listDivider" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/fileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacingNormal"
+                android:background="@drawable/bgr_changes_header"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacingSmall"
+                android:paddingBottom="@dimen/spacingSmall">
+
+                <ImageView
+                    android:id="@+id/fileStatus"
+                    android:layout_width="@dimen/iconSizeSmall"
+                    android:layout_height="@dimen/iconSizeSmall"
+                    android:layout_marginStart="@dimen/spacingNormal"
+                    android:layout_marginTop="@dimen/spacingSmall"
+                    android:layout_marginBottom="@dimen/spacingSmall"
+                    app:srcCompat="@drawable/ic_file_added"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/filePath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacingSmall"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/spacingNormal"
+                    android:layout_weight="1"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    tools:text="src / main / java / com / akvelon / bitbuckler / App.kt" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/lineView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/oldLineNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bgr_line_old_number"
+                        android:paddingStart="@dimen/spacingSmall"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingSmall"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearanceMonospaceVariant"
+                        tools:text="43" />
+
+                    <TextView
+                        android:id="@+id/newLineNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bgr_line_new_number"
+                        android:paddingStart="@dimen/spacingSmall"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingSmall"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearanceMonospaceVariant"
+                        tools:text="47" />
+
+                    <TextView
+                        android:id="@+id/prefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/spacingSmall"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingSmall"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearanceMonospacePrimary"
+                        tools:text="-" />
+
+                    <TextView
+                        android:id="@+id/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/spacingTiny"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingTiny"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearanceMonospacePrimary"
+                        tools:text="import com.akvelon.bitbuckler.model.entity.pullrequest.PullRequest" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/fileDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/borderColor" />
+
+            <include
+                android:id="@+id/commentsTree"
+                layout="@layout/layout_comments_tree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/deleteCommentProgress"
+        layout="@layout/layout_progress_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

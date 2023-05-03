@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/activity"
+        android:icon="@drawable/ic_flame"
+        android:title="@string/tab_title_activity" />
+    <item
+        android:id="@+id/workspaces"
+        android:icon="@drawable/ic_folders"
+        android:title="@string/tab_title_workspaces" />
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/tab_title_account" />
+</menu>

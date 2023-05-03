@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Aleksandra Domashina (aleksandra.domashina@akvelon.com)
+ ~ on 08 February 2021
+-->
+<resources>
+    <!-- Normal -->
+    <color name="closedState">@color/greenDarkest</color>
+    <color name="newState">#1781D1</color>
+    <color name="invalidState">@color/red</color>
+    <color name="onHoldState">@color/grayDark</color>
+    <color name="duplicateState">#FF9800</color>
+
+    <!-- Outlined -->
+    <color name="closedStateOutlined">@color/greenLight</color>
+    <color name="newStateOutlined">#EAE6FF</color>
+    <color name="invalidStateOutlined">@color/pinkLight</color>
+    <color name="onHoldStateOutlined">@color/grayLight</color>
+    <color name="duplicateStateOutlined">#FFF0B3</color>
+</resources>

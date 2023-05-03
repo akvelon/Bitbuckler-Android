@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/admobBannerHeight">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/grPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tvUserIssues,rvUserIssues,tvUserPrs,rvUserPrs,issueTypeTabs" />
+
+                <ImageView
+                    android:id="@+id/ivHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/spacingSmall"
+                    android:paddingStart="@dimen/spacingSmall"
+                    android:paddingEnd="@dimen/spacingNormal"
+                    android:src="@drawable/ic_help"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/ivTrack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/spacingSmall"
+                    android:paddingStart="@dimen/spacingNormal"
+                    android:paddingEnd="@dimen/spacingSmall"
+                    android:src="@drawable/ic_track_button"
+                    app:layout_constraintEnd_toStartOf="@id/ivHelp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvUserIssues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacingNormal"
+                    android:layout_marginVertical="@dimen/spacingSmall"
+                    android:text="@string/my_issues"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivUserIssuesListState"
+                    android:layout_width="@dimen/iconSizeLarge"
+                    android:layout_height="@dimen/iconSizeLarge"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/tvUserIssuesListState"
+                    app:layout_constraintEnd_toEndOf="@id/rvUserIssues"
+                    app:layout_constraintStart_toStartOf="@id/rvUserIssues"
+                    app:layout_constraintTop_toTopOf="@id/rvUserIssues"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:tint="?attr/colorPrimaryVariant"
+                    tools:ignore="ContentDescription"
+                    tools:srcCompat="@drawable/ic_robot" />
+
+                <TextView
+                    android:id="@+id/tvUserIssuesListState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacingSmall"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/rvUserIssues"
+                    app:layout_constraintEnd_toEndOf="@id/rvUserIssues"
+                    app:layout_constraintStart_toStartOf="@id/rvUserIssues"
+                    app:layout_constraintTop_toBottomOf="@id/ivUserIssuesListState"
+                    tools:text="@string/error_list_subtitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUserIssues"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_issue_list_height"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/spacingNormal"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserIssues" />
+
+                <TextView
+                    android:id="@+id/tvUserPrs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacingNormal"
+                    android:layout_marginVertical="@dimen/spacingSmall"
+                    android:text="@string/my_pull_requests"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintTop_toBottomOf="@id/rvUserIssues" />
+
+                <ImageView
+                    android:id="@+id/ivUserPrsListState"
+                    android:layout_width="@dimen/iconSizeLarge"
+                    android:layout_height="@dimen/iconSizeLarge"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/tvUserPrsListState"
+                    app:layout_constraintEnd_toEndOf="@id/rvUserPrs"
+                    app:layout_constraintStart_toStartOf="@id/rvUserPrs"
+                    app:layout_constraintTop_toTopOf="@id/rvUserPrs"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:tint="?attr/colorPrimaryVariant"
+                    tools:ignore="ContentDescription"
+                    tools:srcCompat="@drawable/ic_robot" />
+
+                <TextView
+                    android:id="@+id/tvUserPrsListState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacingSmall"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/rvUserPrs"
+                    app:layout_constraintEnd_toEndOf="@id/rvUserPrs"
+                    app:layout_constraintStart_toStartOf="@id/rvUserPrs"
+                    app:layout_constraintTop_toBottomOf="@id/ivUserPrsListState"
+                    tools:text="@string/error_list_subtitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUserPrs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_pr_list_height_expanded"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/spacingNormal"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserPrs" />
+
+                <TextView
+                    android:id="@+id/tvMyActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacingNormal"
+                    android:layout_marginVertical="@dimen/spacingSmall"
+                    android:text="@string/my_activity"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintTop_toBottomOf="@id/rvUserPrs" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/issueTypeTabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/spacingTiny"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMyActivity"
+                    app:tabGravity="start"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="?android:attr/colorPrimary"
+                    app:tabTextAppearance="?attr/textAppearanceCaption"
+                    app:tabTextColor="?android:attr/textColorPrimary"
+                    tools:ignore="SpeakableTextPresentCheck">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pull_requests_title" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/issues_title" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTracked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="14dp"
+                    android:paddingTop="@dimen/spacingNormal"
+                    app:layout_constraintTop_toBottomOf="@id/issueTypeTabs" />
+
+                <ImageView
+                    android:id="@+id/ivTrackedListState"
+                    android:layout_width="@dimen/iconSizeLarge"
+                    android:layout_height="@dimen/iconSizeLarge"
+                    android:layout_marginTop="@dimen/spacingGiant"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/rvTracked"
+                    app:layout_constraintStart_toStartOf="@id/rvTracked"
+                    app:layout_constraintTop_toTopOf="@id/rvTracked"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:tint="?attr/colorPrimaryVariant"
+                    tools:ignore="ContentDescription"
+                    tools:srcCompat="@drawable/ic_robot" />
+
+                <TextView
+                    android:id="@+id/tvTrackedListState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacingSmall"
+                    android:paddingBottom="@dimen/spacingGiant"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/rvTracked"
+                    app:layout_constraintStart_toStartOf="@id/rvTracked"
+                    app:layout_constraintTop_toBottomOf="@id/ivTrackedListState"
+                    tools:text="@string/error_list_subtitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/emptyListView"
+        layout="@layout/layout_empty_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/errorView"
+        layout="@layout/layout_error_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/progressEmptyListView"
+        layout="@layout/layout_progress_empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>

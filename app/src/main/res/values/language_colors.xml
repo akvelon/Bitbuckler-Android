@@ -1,0 +1,21 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Aleksandra Domashina  (aleksandra.domashina@akvelon.com)
+ ~ on 18 December 2020
+-->
+<resources>
+    <color name="python">#3572A5</color>
+    <color name="java">#B07219</color>
+    <color name="javascript">#F1E05A</color>
+    <color name="kotlin">#F18E33</color>
+    <color name="cPlus">#F34B7D</color>
+    <color name="go">#00ADD8</color>
+    <color name="ruby">#701516</color>
+    <color name="scala">#C22D40</color>
+    <color name="cSharp">#178600</color>
+    <color name="c">#555555</color>
+    <color name="android">#36B37E</color>
+    <color name="dart">#00B4AB</color>
+    <color name="others">#FFAAAAAA</color>
+</resources>

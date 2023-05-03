@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 13 July 2021
+-->
+<resources>
+    <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemIconTint">@color/bottom_nav_item</item>
+        <item name="itemTextColor">@color/bottom_nav_item</item>
+    </style>
+
+    <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ActionButtonOverflow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="tint">?attr/colorPrimary</item>
+    </style>
+</resources>

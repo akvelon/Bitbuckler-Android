@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple"
+    android:paddingHorizontal="@dimen/spacingNormal"
+    android:paddingVertical="@dimen/spacingNormal"
+    tools:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvIssueCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Code #1" />
+
+    <TextView
+        android:id="@+id/tvIssueTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvIssueCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvIssueCode"
+        tools:text="Problem" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPriority"
+        android:layout_width="@dimen/iconSizeTiny"
+        android:layout_height="@dimen/iconSizeTiny"
+        android:layout_marginTop="@dimen/spacingSmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIssueCode"
+        tools:src="@drawable/ic_arrow_up" />
+
+    <TextView
+        android:id="@+id/tvPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/ivPriority"
+        app:layout_constraintStart_toEndOf="@id/ivPriority"
+        app:layout_constraintTop_toTopOf="@id/ivPriority"
+        tools:text="Critical" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivType"
+        android:layout_width="@dimen/iconSizeTiny"
+        android:layout_height="@dimen/iconSizeTiny"
+        android:layout_marginStart="@dimen/spacingPreNormal"
+        app:layout_constraintBottom_toBottomOf="@id/tvPriority"
+        app:layout_constraintStart_toEndOf="@id/tvPriority"
+        app:layout_constraintTop_toTopOf="@id/tvPriority"
+        tools:src="@drawable/ic_arrow_up" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/ivType"
+        app:layout_constraintStart_toEndOf="@id/ivType"
+        app:layout_constraintTop_toTopOf="@id/ivType"
+        tools:text="Enhancement" />
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreNormal"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/spacingTiny"
+        android:paddingVertical="@dimen/spacingTiniest"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvType"
+        app:layout_constraintStart_toEndOf="@id/tvType"
+        tools:text="new" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUserPhoto"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="@dimen/spacingSmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivPriority"
+        tools:src="@drawable/admob_close_button_black_circle_white_cross" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreNormal"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/ivUserPhoto"
+        app:layout_constraintStart_toEndOf="@id/ivUserPhoto"
+        app:layout_constraintTop_toTopOf="@id/ivUserPhoto"
+        tools:text="Saba 123" />
+
+    <TextView
+        android:id="@+id/reporter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingSmall"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSmall"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/delimiter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUserPhoto"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/delimiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:includeFontPadding="false"
+        android:text="@string/delimiter"
+        android:textColor="?android:attr/textColorSecondary"
+        app:layout_constraintBaseline_toBaselineOf="@id/reporter"
+        app:layout_constraintStart_toEndOf="@+id/reporter" />
+
+    <TextView
+        android:id="@+id/createdOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSmall"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/reporter"
+        app:layout_constraintStart_toEndOf="@id/delimiter"
+        tools:text="created 6d" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivComments"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/ic_comments"
+        android:tint="?android:attr/textColorSecondary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvIssueTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvIssueTitle" />
+
+    <TextView
+        android:id="@+id/tvCommentsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacingTiny"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivComments"
+        app:layout_constraintEnd_toStartOf="@id/ivComments"
+        app:layout_constraintTop_toTopOf="@id/ivComments"
+        tools:text="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

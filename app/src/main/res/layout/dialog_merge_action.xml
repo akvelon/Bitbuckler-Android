@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 12 February 2021
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:text="@string/confirm_merge_title"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sourceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:text="@string/pr_branch_source"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialogTitle" />
+
+        <ImageView
+            android:id="@+id/sourceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            app:layout_constraintBottom_toBottomOf="@+id/mergeSourceBranch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mergeSourceBranch"
+            app:srcCompat="@drawable/ic_branch"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/mergeSourceBranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:background="@drawable/bgr_pr_branch"
+            android:textAppearance="@style/TextAppearancePr"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/sourceIcon"
+            app:layout_constraintTop_toBottomOf="@+id/sourceTitle"
+            tools:text="very-long-source-branch" />
+
+        <TextView
+            android:id="@+id/targetTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="24dp"
+            android:text="@string/pr_branch_target"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mergeSourceBranch" />
+
+        <ImageView
+            android:id="@+id/targetIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            app:layout_constraintBottom_toBottomOf="@+id/mergeTargetBranch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mergeTargetBranch"
+            app:srcCompat="@drawable/ic_branch"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/mergeTargetBranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:background="@drawable/bgr_pr_branch"
+            android:textAppearance="@style/TextAppearancePr"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/targetIcon"
+            app:layout_constraintTop_toBottomOf="@+id/targetTitle"
+            tools:text="very-long-destination-branch" />
+
+        <TextView
+            android:id="@+id/commitTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/confirm_merge_commit_title"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mergeTargetBranch" />
+
+        <EditText
+            android:id="@+id/editTextCommit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/textColorPr"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bgr_pr_branch"
+            android:gravity="top"
+            android:imeOptions="flagNoExtractUi"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:labelFor="@id/commitTitle"
+            android:lines="5"
+            android:maxLines="5"
+            android:textAppearance="@style/TextAppearancePr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commitTitle"
+            tools:text="Merged in very-long-source-branch (pull request #5)"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/mergeStrategyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:text="@string/confirm_merge_strategy_title"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCommit" />
+
+        <TextView
+           android:id="@+id/mergeStrategyFake"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bgr_pr_branch"
+            android:elevation="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mergeStrategyTitle"
+            android:layout_marginStart="@dimen/spacingMedium"
+            tools:text="@string/confirm_merge_title"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:textAppearance="@style/TextAppearancePr"
+            app:drawableEndCompat="@drawable/ic_dropdown"
+            app:drawableTint="@color/fillColorStyleSecondary" />
+
+        <Spinner
+            android:id="@+id/mergeStrategySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:visibility="invisible"
+            android:background="@drawable/transparent_ripple"
+            android:textAppearance="@style/TextAppearancePr"
+            android:dropDownWidth="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mergeStrategyTitle"
+            tools:listitem="@layout/item_merge_strategy_collapse" />
+
+        <CheckBox
+            android:id="@+id/closeSourceBranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:layout_marginBottom="@dimen/spacingMedium"
+            android:textColor="@color/secondaryTextLight"
+            android:theme="@style/checkBoxStyle"
+            android:text="@string/confirm_merge_close_branch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mergeStrategyFake"
+            tools:checked="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

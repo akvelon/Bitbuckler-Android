@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Alexander Vinogradov (a.vinogradov@akvelon.com)
+ ~ on 09 December 2021
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lineNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgr_line_number"
+        android:paddingStart="@dimen/spacingSmall"
+        android:paddingTop="@dimen/spacingTiniest"
+        android:paddingEnd="@dimen/spacingSmall"
+        android:paddingBottom="@dimen/spacingTiniest"
+        android:textAppearance="@style/TextAppearanceMonospaceVariant"
+        tools:text="12" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/segments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacingTiny"
+        android:paddingEnd="@dimen/spacingTiny"
+        app:layoutManager="com.akvelon.bitbuckler.ui.view.PreloadLinearLayoutManager"
+        tools:listitem="@layout/item_search_segment" />
+</LinearLayout>

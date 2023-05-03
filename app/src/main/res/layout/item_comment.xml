@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 11 January 2021
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Space
+        android:id="@+id/levelSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/iconSizeLarge"
+        android:layout_height="@dimen/iconSizeLarge"
+        android:layout_marginTop="@dimen/spacingPreNormal"
+        app:layout_constraintStart_toEndOf="@+id/levelSpace"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreMedium"
+        android:layout_marginTop="@dimen/spacingPreNormal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/createdOn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/createdOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/author"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/author"
+        app:layout_constraintTop_toTopOf="@+id/author"
+        app:layout_constraintWidth_min="12dp"
+        tools:text="2h" />
+
+    <Space
+        android:id="@+id/authorSpace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        app:layout_constraintBottom_toBottomOf="@+id/author"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@+id/author" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreMedium"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:textAppearance="@style/TextAppearanceCommentContent"
+        android:lineSpacingExtra="6sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        tools:text="please resolve conflicts"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreMedium"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:background="@drawable/ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/pr_comment_reply"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delimiterReplyEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/delimiterReplyEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:text="@string/delimiter"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constraintEnd_toStartOf="@+id/edit"
+        app:layout_constraintStart_toEndOf="@+id/reply"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:background="@drawable/ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/pr_comment_edit"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constraintEnd_toStartOf="@+id/delimiterEditDelete"
+        app:layout_constraintStart_toEndOf="@+id/delimiterReplyEdit"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/delimiterEditDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:text="@string/delimiter"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constraintEnd_toStartOf="@+id/delete"
+        app:layout_constraintStart_toEndOf="@+id/edit"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:background="@drawable/ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/pr_comment_delete"
+        android:textAppearance="@style/TextAppearanceCommentTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/delimiterEditDelete"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <Space
+        android:id="@+id/actionSpace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingPreNormal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@+id/reply" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/accountActionGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="delimiterReplyEdit,edit,delimiterEditDelete,delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

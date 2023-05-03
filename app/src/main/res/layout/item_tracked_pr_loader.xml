@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="116dp"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginBottom="@dimen/spacingNormal"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/vHeader"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#E9F3FF"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="@dimen/spacingNormal"
+            app:layout_constraintBottom_toBottomOf="@id/vHeader"
+            app:layout_constraintStart_toStartOf="@id/vHeader"
+            app:layout_constraintTop_toTopOf="@id/vHeader" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="sampleauthor"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBottom_toBottomOf="@id/vHeader"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="@id/vHeader" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:background="@drawable/bgr_pr_state_open"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/spacingTiny"
+            android:paddingVertical="@dimen/spacingTiniest"
+            android:text="open"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@color/openStateTextColor"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/vHeader"
+            app:layout_constraintEnd_toEndOf="@id/vHeader"
+            app:layout_constraintTop_toTopOf="@id/vHeader" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="BIT-96: Colorize all SwipeToRefresh to blue"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vHeader" />
+
+        <ImageView
+            android:id="@+id/typeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:src="@drawable/ic_merge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="@dimen/spacingZero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:text="@string/pr_type_mine"
+            android:textAppearance="?attr/textAppearanceListItemSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/typeIcon"
+            app:layout_constraintStart_toEndOf="@id/typeIcon"
+            app:layout_constraintTop_toTopOf="@id/typeIcon" />
+
+        <TextView
+            android:id="@+id/createdOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginBottom="@dimen/spacingNormal"
+            android:includeFontPadding="false"
+            android:text="samplename"
+            android:textAppearance="?attr/textAppearanceListItemSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/delimiter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/typeIcon" />
+
+        <TextView
+            android:id="@+id/delimiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingTiny"
+            android:includeFontPadding="false"
+            android:text="@string/delimiter"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintBaseline_toBaselineOf="@id/createdOn"
+            app:layout_constraintStart_toEndOf="@+id/createdOn" />
+
+        <TextView
+            android:id="@+id/updatedOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingTiny"
+            android:includeFontPadding="false"
+            android:text="created 6d"
+            android:textAppearance="?attr/textAppearanceListItemSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/createdOn"
+            app:layout_constraintStart_toEndOf="@id/delimiter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

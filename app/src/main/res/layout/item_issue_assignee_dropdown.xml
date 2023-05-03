@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Aleksandra Domashina (aleksandra.domashina@akvelon.com)
+ ~ on 24 March 2021
+-->
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAssignee"
+        android:layout_width="@dimen/iconSizeNormal"
+        android:layout_height="@dimen/iconSizeNormal"
+        tools:src="@drawable/shape_donations_item_selected" />
+
+    <TextView
+        android:id="@+id/tvAssigneeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:includeFontPadding="false"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="14sp"
+        tools:text="Test User" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 28 January 2021
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/errorImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacingLarge"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        app:srcCompat="@drawable/ic_robot"
+        app:tint="?attr/colorPrimaryVariant"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/errorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:text="@string/error_list_title"
+        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+    <TextView
+        android:id="@+id/errorSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:gravity="center"
+        android:text="@string/error_list_subtitle"
+        android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+    <Button
+        android:id="@+id/retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:text="@string/error_list_button"
+        android:textAllCaps="false" />
+
+</LinearLayout>

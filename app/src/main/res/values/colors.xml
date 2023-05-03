@@ -1,0 +1,96 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Roman Gromov (roman.gromov@akvelon.com)
+ ~ on 20 November 2020
+-->
+<resources>
+
+    <color name="blue">#2684FF</color>
+    <color name="blueSky">#59AFE1</color>
+    <color name="blueDark">#0104FF</color>
+
+    <color name="azure">#007FFF</color>
+    <color name="azureDark">#0066CC</color>
+
+    <color name="cyan">#00B8D9</color>
+    <color name="cyanDark">#0088A7</color>
+    <color name="cyanLight">#93E2F4</color>
+
+    <color name="purpleDark">#986eff</color>
+    <color name="pinkLight">#FFCDD2</color>
+    <color name="pinkLightest">#e5cbd7</color>
+
+    <color name="red">#DE350B</color>
+    <color name="disagreeBackground">#33FF0000</color>
+    <color name="disagree">#E30000</color>
+    <color name="redBright">#CE0000</color>
+    <color name="redLight">#EA4444</color>
+    <color name="redDark">#AB2909</color>
+    <color name="brown">#452622</color>
+    <color name="redDarkMrDiff">#290301</color>
+    <color name="redLightMrDiff">#F9CBCD</color>
+
+    <color name="yellow">#f8d70f</color>
+    <color name="yellowMetal">#6E5A39</color>
+    <color name="yellowMetalDark">#615032</color>
+
+    <color name="orange">#fca803</color>
+    <color name="orangeLight">#fbf2b6</color>
+    <color name="orangeLightest">#fffae6</color>
+    <color name="orangeHighlight">#ff9632</color>
+
+    <color name="green">#2FA76B</color>
+    <color name="greenBright">#36F88D</color>
+    <color name="greenLight">#ddfceb</color>
+    <color name="greenDark">#2A8735</color>
+    <color name="greenForestDark">#294436</color>
+    <color name="greenDarkest">#107648</color>
+    <color name="mergePrStateBackgroundLight">#3376F058</color>
+    <color name="mergePrStateLight">#177200</color>
+    <color name="greenMergePR">#177200</color>
+    <color name="greenDarkMrDiff">#1E2F16</color>
+    <color name="approvedBackgroundColor">#22A800</color>
+    <color name="greenLightMrDiff">#DDFCEC</color>
+    <color name="greenBackground">#263E20</color>
+    <color name="greenMedium">#4DA437</color>
+
+    <color name="backgroundColorDark">#121212</color>
+    <color name="black">#13161E</color>
+    <color name="primaryTextLight">#000000</color>
+    <color name="blackLight">#212121</color>
+    <color name="primaryBackgroundColorLight">#FFFFFF</color>
+    <color name="whiteDark">#fafbfc</color>
+    <color name="whiteSmoke">#E8E6F1</color>
+    <color name="white60">#99FFFFFF</color>
+    <color name="white40">#65FFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="secondaryText">#828282</color>
+    <color name="greyBackground">#535F7780</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="secondaryTextLight">#828282</color>
+    <color name="graySmoke">#B3B3B3</color>
+    <color name="grayLight">#e4e6ee</color>
+    <color name="grayLightest">#F4F5F7</color>
+    <color name="grayDark">#565269</color>
+    <color name="secondaryBackground">#535F77</color>
+    <color name="grayDark50">#80565269</color>
+    <color name="grayDarkest">#141414</color>
+    <color name="gainsboro">#E0E0E0</color>
+    <color name="separatorLight">#D5D5D5</color>
+    <color name="separatorDark">#2C2C2C</color>
+    <color name="charcoal">#464646</color>
+    <color name="charcoalDark">#393939</color>
+    <color name="textFieldBackgroundLight">#272727</color>
+    <color name="fillColorStyleSecondary">#909090</color>
+
+    <color name="secondaryTextDark">#BEBEBE</color>
+    <color name="textFieldTextLight">#4D4D4D</color>
+
+    <color name="prStateBackgroundLight">#332684FF</color>
+    <color name="mainColorLight">#2684FF</color>
+    <color name="tabBarIconsDisable">#B3828282</color>
+    <color name="textFieldBackground">#F4F5F7</color>
+    <color name="textFilesBackgroundLight">#1A828282</color>
+</resources>

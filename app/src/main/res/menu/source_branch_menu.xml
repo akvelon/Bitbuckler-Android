@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/selectBranch"
+        android:title="@string/source_menu_select_branch" />
+
+    <item
+        android:id="@+id/selectTag"
+        android:title="@string/source_menu_select_tag" />
+</menu>

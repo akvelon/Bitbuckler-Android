@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Alexander Vinogradov (a.vinogradov@akvelon.com)
+ ~ on 09 December 2021
+-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/code"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxLines="1"
+    android:paddingTop="@dimen/spacingTiniest"
+    android:paddingBottom="@dimen/spacingTiniest"
+    android:textAppearance="@style/TextAppearanceMonospacePrimary"
+    tools:text="code" />

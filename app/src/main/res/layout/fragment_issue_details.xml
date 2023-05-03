@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="?attr/homeAsUpIndicator">
+
+            <ImageButton
+                android:id="@+id/ivEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="@dimen/spacingNormal"
+                android:background="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_edit"
+                tools:ignore="ContentDescription" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:background="?android:attr/listDivider" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                app:maskColor="?attr/skeletonLayoutMaskColor"
+                app:shimmerColor="?attr/skeletonLayoutShimmerColor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:background="@color/white"
+                    tools:context=".ui.screen.repository.issues.details.IssueDetailsFragment">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glStart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/spacingNormal" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/spacingNormal" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="test" />
+
+                    <TextView
+                        android:id="@+id/tvSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingTiny"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="?android:attr/textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                        tools:ignore="TextContrastCheck"
+                        tools:text="Issue #1" />
+
+                    <TextView
+                        android:id="@+id/createdOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/delimiter"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+                        tools:ignore="TextContrastCheck"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/delimiter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingSmall"
+                        android:includeFontPadding="false"
+                        android:text="@string/delimiter"
+                        android:textColor="?android:attr/textColorSecondary"
+                        app:layout_constraintBaseline_toBaselineOf="@id/createdOn"
+                        app:layout_constraintStart_toEndOf="@+id/createdOn"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/updatedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingSmall"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/createdOn"
+                        app:layout_constraintStart_toEndOf="@id/delimiter"
+                        tools:ignore="TextContrastCheck"
+                        tools:text="created 6d" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/btPriority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/createdOn" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPriority"
+                        android:layout_width="@dimen/iconSizeNormal"
+                        android:layout_height="@dimen/iconSizeNormal"
+                        android:padding="@dimen/spacingSmall"
+                        android:src="@drawable/ic_dropdown"
+                        android:tint="?android:attr/textColorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/btPriority"
+                        app:layout_constraintStart_toEndOf="@id/btPriority"
+                        app:layout_constraintTop_toTopOf="@id/btPriority" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/btType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintBottom_toBottomOf="@id/btPriority"
+                        app:layout_constraintEnd_toStartOf="@id/btStatus"
+                        app:layout_constraintStart_toEndOf="@id/btPriority"
+                        app:layout_constraintTop_toTopOf="@id/btPriority" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivType"
+                        android:layout_width="@dimen/iconSizeNormal"
+                        android:layout_height="@dimen/iconSizeNormal"
+                        android:padding="@dimen/spacingSmall"
+                        android:src="@drawable/ic_dropdown"
+                        android:tint="?android:attr/textColorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/btType"
+                        app:layout_constraintStart_toEndOf="@id/btType"
+                        app:layout_constraintTop_toTopOf="@id/btType" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/btStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintBottom_toBottomOf="@id/btPriority"
+                        app:layout_constraintEnd_toStartOf="@id/ivStatus"
+                        app:layout_constraintTop_toTopOf="@id/btPriority" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivStatus"
+                        android:layout_width="@dimen/iconSizeNormal"
+                        android:layout_height="@dimen/iconSizeNormal"
+                        android:padding="@dimen/spacingSmall"
+                        android:src="@drawable/ic_dropdown"
+                        android:tint="?android:attr/textColorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/btStatus"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintTop_toTopOf="@id/btStatus" />
+
+                    <TextView
+                        android:id="@+id/tvAssigneeLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:text="@string/assignee"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/btPriority" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/btAssignee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        android:background="@null"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvAssigneeLabel" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAssignee"
+                        android:layout_width="@dimen/iconSizeNormal"
+                        android:layout_height="@dimen/iconSizeNormal"
+                        android:padding="@dimen/spacingSmall"
+                        android:src="@drawable/ic_dropdown"
+                        android:tint="?android:attr/textColorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/btAssignee"
+                        app:layout_constraintStart_toEndOf="@id/btAssignee"
+                        app:layout_constraintTop_toTopOf="@id/btAssignee" />
+
+                    <TextView
+                        android:id="@+id/tvReporterLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:text="@string/reporter"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/btAssignee" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivReporter"
+                        android:layout_width="@dimen/iconSizeNormal"
+                        android:layout_height="@dimen/iconSizeNormal"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvReporterLabel"
+                        tools:src="@drawable/shape_donations_item_selected" />
+
+                    <TextView
+                        android:id="@+id/tvReporterName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacingSmall"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivReporter"
+                        app:layout_constraintStart_toEndOf="@id/ivReporter"
+                        app:layout_constraintTop_toTopOf="@id/ivReporter"
+                        tools:text="Test User" />
+
+                    <TextView
+                        android:id="@+id/tvDescriptionLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:text="@string/description"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/ivReporter" />
+
+                    <TextView
+                        android:id="@+id/tvDescriptionContent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        android:includeFontPadding="false"
+                        android:text="@string/no_description"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel" />
+
+                    <TextView
+                        android:id="@+id/tvAttachmentsLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:text="@string/attachments"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvDescriptionContent" />
+
+                    <TextView
+                        android:id="@+id/tvAttachmentsNoContent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        android:includeFontPadding="false"
+                        android:text="@string/no_attachments"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/tvAttachmentsLabel" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAttachmentsContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingPreNormal"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="@dimen/spacingNormal"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/tvAttachmentsLabel" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/brAttachmentsContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="rvAttachmentsContent, tvAttachmentsNoContent" />
+
+                    <ImageButton
+                        android:id="@+id/voteButton"
+                        android:layout_width="@dimen/iconSizeMedium"
+                        android:layout_height="@dimen/iconSizeMedium"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:background="@drawable/circle_ripple"
+                        android:padding="@dimen/spacingSmall"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@+id/brAttachmentsContent"
+                        app:srcCompat="@drawable/ic_thumb_up_outlined"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/votes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/voteButton"
+                        app:layout_constraintStart_toEndOf="@+id/voteButton"
+                        app:layout_constraintTop_toTopOf="@+id/voteButton"
+                        tools:text="3 votes" />
+
+                    <ImageButton
+                        android:id="@+id/watchButton"
+                        android:layout_width="@dimen/iconSizeMedium"
+                        android:layout_height="@dimen/iconSizeMedium"
+                        android:layout_marginStart="@dimen/spacingMedium"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:background="@drawable/circle_ripple"
+                        android:padding="@dimen/spacingSmall"
+                        app:layout_constraintStart_toEndOf="@+id/votes"
+                        app:layout_constraintTop_toBottomOf="@+id/brAttachmentsContent"
+                        app:srcCompat="@drawable/ic_eye_outlined"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/watchers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/watchButton"
+                        app:layout_constraintStart_toEndOf="@+id/watchButton"
+                        app:layout_constraintTop_toTopOf="@+id/watchButton"
+                        tools:text="2 watchers" />
+
+                    <View
+                        android:id="@+id/vDividerComments"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="@id/glEnd"
+                        app:layout_constraintStart_toStartOf="@id/glStart"
+                        app:layout_constraintTop_toBottomOf="@id/voteButton" />
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/commentsHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/spacingMedium"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vDividerComments" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacingHuge"
+        android:layout_gravity="bottom"
+        android:background="?attr/backgroundPrAction"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"
+            android:background="?android:attr/listDivider" />
+
+        <Button
+            android:id="@+id/btIssueAction"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/iconSizeLarge"
+            android:layout_gravity="center"
+            android:background="@drawable/bgr_repository_button"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/spacingMedium"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck"
+            tools:text="@string/resolve" />
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/errorView"
+        layout="@layout/layout_error_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/fullScreenProgress"
+        layout="@layout/layout_progress_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

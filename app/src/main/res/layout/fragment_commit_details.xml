@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Viacheslav Loktistov (v.loktistov@akvelon.com)
+ ~ on 24 November 2021
+-->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="?attr/homeAsUpIndicator" />
+
+        <View
+            android:id="@+id/toolbarDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginEnd="@dimen/spacingNormal" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:maskColor="?attr/skeletonLayoutMaskColor"
+                app:shimmerColor="?attr/skeletonLayoutShimmerColor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".ui.screen.commit.CommitDetailsFragment">
+
+                    <ImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="@dimen/iconSizeLarge"
+                        android:layout_height="@dimen/iconSizeLarge"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toStartOf="@+id/delimiter"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@+id/avatar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/delimiter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingTiny"
+                        android:text="@string/delimiter"
+                        android:textAppearance="?attr/textAppearanceCaption"
+                        app:layout_constraintEnd_toStartOf="@+id/updatedOn"
+                        app:layout_constraintStart_toEndOf="@+id/author"
+                        app:layout_constraintTop_toTopOf="@id/author"
+                        app:layout_constraintBottom_toBottomOf="@id/author"/>
+
+                    <TextView
+                        android:id="@+id/updatedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingTiny"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="?attr/textAppearanceCaption"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/delimiter"
+                        app:layout_constraintTop_toTopOf="@id/author"
+                        app:layout_constraintBottom_toBottomOf="@id/author"
+                        tools:text="updated 1 hour ago" />
+
+                    <Space
+                        android:id="@+id/authorSpace"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingSmall"
+                        app:layout_constraintBottom_toBottomOf="@+id/author"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/avatar"
+                        app:layout_constraintTop_toTopOf="@+id/author" />
+
+                    <TextView
+                        android:id="@+id/commitHash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingTiny"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingTiny"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textColor="?android:attr/textColorPrimary"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toStartOf="@+id/branchArrow"
+                        app:layout_constraintStart_toStartOf="@+id/author"
+                        app:layout_constraintTop_toBottomOf="@id/authorSpace"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        tools:text="42e0932" />
+
+                    <ImageView
+                        android:id="@+id/branchArrow"
+                        android:layout_width="@dimen/iconSizeMini"
+                        android:layout_height="@dimen/iconSizeMini"
+                        android:layout_marginStart="@dimen/spacingTiny"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="@+id/sourceBranch"
+                        app:layout_constraintEnd_toStartOf="@+id/sourceBranch"
+                        app:layout_constraintStart_toEndOf="@+id/commitHash"
+                        app:layout_constraintTop_toTopOf="@+id/sourceBranch"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/sourceBranch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingTiny"
+                        android:layout_marginTop="@dimen/spacingTiny"
+                        android:background="@drawable/bgr_pr_branch"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/spacingTiny"
+                        android:paddingTop="@dimen/spacingTiniest"
+                        android:paddingEnd="@dimen/spacingTiny"
+                        android:paddingBottom="@dimen/spacingTiniest"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textStyle="bold"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@+id/branchArrow"
+                        app:layout_constraintTop_toBottomOf="@+id/authorSpace"
+                        app:layout_constraintWidth_min="24dp"
+                        tools:text="BIT-61" />
+
+                    <Space
+                        android:id="@+id/branchSpace"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingSmall"
+                        app:layout_constraintBottom_toBottomOf="@+id/sourceBranch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/avatar"
+                        app:layout_constraintTop_toTopOf="@+id/sourceBranch"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <Button
+                        android:id="@+id/toFiles"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:text="@string/files_button"
+                        android:textColor="?attr/colorPrimaryVariant"
+                        app:icon="@drawable/ic_code"
+                        app:iconTint="?attr/colorPrimaryVariant"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+                    <TextView
+                        android:id="@+id/commitMessageTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:text="@string/commit_message_title"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toFiles" />
+
+                    <TextView
+                        android:id="@+id/commitMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingSmall"
+                        android:layout_marginEnd="@dimen/spacingNormal"
+                        android:textAppearance="@style/TextAppearanceCommentContent"
+                        android:textColor="@color/secondaryText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commitMessageTitle"
+                        tools:text="Minor improvements, including code refactoring" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingNormal"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commitMessage" />
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/commentsContainer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="60dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/errorView"
+        layout="@layout/layout_error_full_screen"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/fullScreenProgress"
+        layout="@layout/layout_progress_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

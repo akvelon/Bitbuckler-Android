@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 15 January 2021
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/toolbarMenuBackground">
+
+    <TextView
+        android:id="@+id/sourceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingMedium"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:text="@string/pr_branch_source"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sourceIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingMedium"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogSourceBranch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dialogSourceBranch"
+        app:srcCompat="@drawable/ic_branch"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/dialogSourceBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingSmall"
+        android:layout_marginEnd="@dimen/spacingMedium"
+        android:background="@drawable/bgr_pr_branch"
+        android:paddingStart="@dimen/spacingSmall"
+        android:paddingTop="@dimen/spacingTiniest"
+        android:paddingEnd="@dimen/spacingSmall"
+        android:paddingBottom="@dimen/spacingTiniest"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sourceIcon"
+        app:layout_constraintTop_toBottomOf="@+id/sourceTitle"
+        tools:text="very-long-source-branch" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:background="?attr/branchesPopupDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogSourceBranch" />
+
+    <TextView
+        android:id="@+id/targetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingMedium"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:text="@string/pr_branch_target"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <ImageView
+        android:id="@+id/targetIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingMedium"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogTargetBranch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dialogTargetBranch"
+        app:srcCompat="@drawable/ic_branch"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/dialogTargetBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginTop="@dimen/spacingSmall"
+        android:layout_marginEnd="@dimen/spacingMedium"
+        android:layout_marginBottom="@dimen/spacingMedium"
+        android:background="@drawable/bgr_pr_branch"
+        android:paddingStart="@dimen/spacingSmall"
+        android:paddingTop="@dimen/spacingTiniest"
+        android:paddingEnd="@dimen/spacingSmall"
+        android:paddingBottom="@dimen/spacingTiniest"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/targetIcon"
+        app:layout_constraintTop_toBottomOf="@+id/targetTitle"
+        tools:text="very-long-destination-branch" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingGiant"
+        android:layout_marginEnd="@dimen/spacingMedium"
+        android:layout_marginBottom="@dimen/spacingPreMedium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/cancel_pr_navigation"
+        android:fontFamily="sans-serif-medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/dialogTargetBranch"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

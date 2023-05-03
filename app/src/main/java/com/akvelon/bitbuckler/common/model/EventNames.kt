@@ -1,0 +1,10 @@
+package com.akvelon.bitbuckler.common.model
+
+object EventNames {
+    const val WORKSPACE_REOPENED = "WORKSPACE REOPENED"
+    const val PR_DIALOG_CLOSED = "PR DIALOG CLOSED"
+    const val TAB_ACTIVITY_TAPPED = "TAB ACTIVITY TAPPED"
+    const val TAB_WORKSPACES_TAPPED = "TAB WORKSPACES TAPPED"
+    const val TAB_PROFILE_TAPPED = "TAB PROFILE TAPPED"
+    const val ACTIVITY_TRACK_REPO_CHANGED = "ACTIVITY TRACK REPO CHANGED"
+}

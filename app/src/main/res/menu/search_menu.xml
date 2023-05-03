@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Alexander Vinogradov (a.vinogradov@akvelon.com)
+ ~ on 15 December 2021
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/searchItem"
+        android:icon="@drawable/ic_search"
+        app:iconTint="?attr/colorPrimary"
+        app:showAsAction="always"
+        android:title="@string/search" />
+</menu>

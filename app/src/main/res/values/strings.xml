@@ -1,0 +1,341 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Roman Gromov (roman.gromov@akvelon.com)
+ ~ on 20 November 2020
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Bitbuckler</string>
+
+    <!-- Error messages -->
+    <string name="error_no_internet">An error has occurred. Please check your internet connection and try again</string>
+    <string name="error_unknown">Something went wrong. Please try again</string>
+
+    <!-- ActivityList Fragment -->
+    <string name="activity_list_title">Activity</string>
+    <string name="pr_link">PR link</string>
+    <string name="submit_pr_navigation">SUBMIT</string>
+    <string name="cancel_pr_navigation" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="confirm">Confirm</string>
+    <string name="submit"><b>Submit</b></string>
+    <string name="cancel">Cancel</string>
+    <string name="pull_request_link">Pull request link</string>
+    <string name="past_pull_request_link">Paste your pull request\'s link to open:</string>
+    <string name="url_should_be_valid">Link is invalid, please paste valid link URL</string>
+    <string name="not_a_bitbucket_repository">Not a bitbucket repository</string>
+    <string name="link">Link</string>
+    <string name="filter">Filter</string>
+    <string name="activities_menu">Activities menu</string>
+    <string name="expand_filter_options">Expand filter options</string>
+    <string name="track_repos">Track repos</string>
+
+    <!-- WorkspaceList Fragment -->
+    <string name="workspace_list_recent_repositories">Recent Repositories</string>
+    <string name="workspace_list_title">Workspaces</string>
+
+    <!-- RepositoryList Fragment -->
+    <string name="repository_list_title">Repositories</string>
+    <string name="search_hint">Searching by Repositories</string>
+
+    <!-- ProjectList Fragment -->
+    <string name="project_list_title">Projects</string>
+
+    <!-- Bottom Navigation -->
+    <string name="tab_title_activity">Activity</string>
+    <string name="tab_title_workspaces">Repositories</string>
+    <string name="tab_title_account">Profile</string>
+
+    <!-- Empty List -->
+    <string name="empty_list_title">Nothing here yet</string>
+    <string name="empty_list_subtitle">But it will appear soon</string>
+    <string name="empty_list_button">Refresh</string>
+
+    <!-- Error screen -->
+    <string name="error_list_title">Beep-boop-beep</string>
+    <string name="error_list_subtitle">Something went wrong. Please try again</string>
+    <string name="error_list_button">Retry</string>
+    <string name="error_list_back">Go back</string>
+
+    <!-- No internet connection screen -->
+    <string name="no_internet_title">No Internet connection</string>
+    <string name="no_internet_subtitle">Please check the connection and try again</string>
+
+    <!-- Progress error list -->
+    <string name="progress_error_title">Something went wrong</string>
+    <string name="progress_error_button">Try Again</string>
+
+    <!-- No access screen -->
+    <string name="no_access_title">Sorry, you\'re not allowed here</string>
+    <string name="no_access_subtitle">It\'s a private repository, and you do not have access to it. Try to contact its admin.</string>
+
+    <!-- Time -->
+    <string name="created">Created %s</string>
+    <string name="updated">updated %s</string>
+
+    <!-- Time periods -->
+    <string name="days_ago">%s days ago</string>
+    <string name="yesterday">yesterday</string>
+    <string name="hours_ago">%s hours ago</string>
+    <string name="an_hour_ago">an hour ago</string>
+    <string name="minutes_ago">%s minutes ago</string>
+    <string name="a_minute_ago">a minute ago</string>
+    <string name="just_now">just now</string>
+
+    <!-- Time periods short -->
+    <string name="days_ago_short">%sd</string>
+    <string name="hours_ago_short">%sh</string>
+    <string name="minutes_ago_short">%sm</string>
+    <string name="now">now</string>
+
+    <!-- Start Fragment -->
+    <string name="button_login">Sign in with Bitbucket</string>
+    <string name="motto">Working with <font color="#115EFF">Bitbucket</font>\nin a convenient way.</string>
+    <string name="install_browser">Please install/enable web browser</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="ok_bold" translatable="false"><b>OK</b></string>
+
+    <!-- Account Fragment -->
+    <string name="confirm_logout_title">Confirm logout</string>
+    <string name="confirm_logout_message">This will clear all user settings and cashed data from the device.
+        You will be returned to the Login screen </string>
+    <string name="confirm_logout_yes">Logout</string>
+    <string name="confirm_logout_no">Cancel</string>
+    <string name="app_version">Version %s</string>
+    <string name="copyright" translatable="false">Copyright © 2022, <a href="https://akvelon.com">Akvelon Inc.</a></string>
+    <string name="contact_us">Contact us</string>
+    <string name="app_theme">Theme</string>
+    <string name="rate_app">Rate application</string>
+    <string name="switch_account">Switch account</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="logout">Logout</string>
+
+    <!-- PullRequests Fragment -->
+    <string name="pull_request_id" translatable="false">#%s</string>
+    <string name="delimiter" translatable="false">•</string>
+    <string name="pull_requests_title">Pull requests</string>
+    <string name="approved_by">Approved by</string>
+    <string name="not_approved_yet">Not approved yet</string>
+
+    <!-- PullRequest Details -->
+    <string name="passed">Passed</string>
+    <string name="count_of">%s of %s</string>
+    <string name="files_button">Files</string>
+    <string name="commits_button">Commits</string>
+    <string name="reviewers">Reviewers</string>
+    <string name="no_reviewers">No reviewers</string>
+    <string name="builds">Builds</string>
+    <string name="no_builds">No builds</string>
+    <string name="description">Description</string>
+    <string name="no_description">No description</string>
+    <string name="comments">Comments</string>
+    <string name="replying_to">Replying to %s</string>
+
+    <!-- PullRequest State  -->
+    <string name="pr_state_open">Open</string>
+    <string name="pr_state_merged">Merged</string>
+    <string name="pr_state_declined">Declined</string>
+    <string name="pr_state_superseded">Superseded</string>
+
+    <!-- PullRequest Type  -->
+    <string name="pr_type_mine">Pull request</string>
+
+    <!-- PullRequest Actions -->
+    <string name="pr_action_merge">Merge</string>
+    <string name="pr_action_approve">Approve</string>
+    <string name="pr_action_unapprove">Unapprove</string>
+    <string name="pr_action_decline">Decline</string>
+    <string name="pr_action_request_changes">Return</string>
+    <string name="pr_action_changes_requested">Returned</string>
+
+    <!-- PullRequest Branches Dialog -->
+    <string name="pr_branch_source">Source</string>
+    <string name="pr_branch_target">Target</string>
+
+    <!-- PullRequest Decline Dialog -->
+    <string name="confirm_decline_title">Confirm decline</string>
+    <string name="confirm_decline_message">Declining a pull request cannot be undone</string>
+    <string name="confirm_decline_yes">Decline</string>
+    <string name="confirm_decline_no">Cancel</string>
+
+    <!-- PullRequest Merge Dialog -->
+    <string name="confirm_merge_title">Merge pull request</string>
+    <string name="confirm_merge_commit_title">Commit message</string>
+    <string name="confirm_merge_commit_template" translatable="false">Merged in %s (pull request #%d)\n\n%s</string>
+    <string name="confirm_merge_strategy_title">Merge strategy</string>
+    <string name="confirm_merge_close_branch">Close source branch</string>
+    <string name="confirm_merge_yes"><b>Merge</b></string>
+    <string name="confirm_merge_no"><b>Cancel</b></string>
+
+    <!-- PullRequest Delete Comment Dialog -->
+    <string name="pr_confirm_delete_comment_title"><b>Delete comment</b></string>
+    <string name="pr_confirm_delete_comment_message">Are you sure you want to delete this comment?</string>
+    <string name="pr_confirm_delete_comment_yes"><b>Delete</b></string>
+    <string name="pr_confirm_delete_comment_no"><b>Cancel</b></string>
+
+    <!-- PullRequest Comments -->
+    <string name="pr_comment_reply">Reply</string>
+    <string name="pr_comment_edit">Edit</string>
+    <string name="pr_comment_delete">Delete</string>
+    <string name="pr_comment_button">Add a comment</string>
+    <string name="pr_comment_deleted">Comment deleted</string>
+
+    <!-- Add new comment -->
+    <string name="comment_send">Send</string>
+    <string name="comment_hint">Comment</string>
+    <string name="comment_title">New comment</string>
+    <string name="comment_edit_title">Edit comment</string>
+    <string name="comment_updated_on">%m</string>
+
+    <!-- Add new comment confirm dialog -->
+    <string name="confirm_leave_comment_title">Confirmation</string>
+    <string name="confirm_leave_comment_message">If you leave, the information will be lost</string>
+    <string name="confirm_leave_comment_yes">Leave</string>
+    <string name="confirm_leave_comment_no">Cancel</string>
+
+    <!-- PullRequest Changes -->
+    <string name="files_title">Files</string>
+    <string name="lines_added" translatable="false">+%s</string>
+    <string name="lines_removed" translatable="false">-%s</string>
+
+    <!-- PullRequest Diff Line -->
+    <string name="line_added_prefix" translatable="false">+</string>
+    <string name="line_removed_prefix" translatable="false">-</string>
+    <string name="line_unchanged_prefix" translatable="false">\u0020</string>
+    <string name="line_binary_content">No preview of this file is available.</string>
+    <string name="large_diff_title">No preview of this file is available</string>
+    <string name="large_diff_subtitle">This diff is too large</string>
+
+    <!-- PullRequest Empty Diff -->
+    <string name="empty_diff_title">Nothing to show</string>
+    <string name="empty_diff_subtitle">The source or destination branch was deleted, or these changes already exist in the destination repository.</string>
+    <string name="empty_diff_button">Refresh</string>
+
+    <!-- IssueList Fragment -->
+    <string name="number_sign" translatable="false">#%s</string>
+    <string name="issue_filter_all">All</string>
+    <string name="issue_filter_open">Open</string>
+    <string name="issue_filter_mine">My issues</string>
+
+    <!-- IssueDetails Fragment -->
+    <string name="assignee">Assignee</string>
+    <string name="unassigned">Unassigned</string>
+    <string name="reporter">Reporter</string>
+    <string name="vote">1 vote</string>
+    <string name="votes">%s votes</string>
+    <string name="watcher">1 watcher</string>
+    <string name="watchers">%s watchers</string>
+
+    <!-- Repository Details Fragment -->
+    <string name="branches_title">Branches</string>
+    <string name="issues_title">Issues</string>
+    <string name="source_title">Source</string>
+    <string name="commits_title">Commits</string>
+    <string name="private_repository">Private</string>
+    <string name="public_repository">Public</string>
+    <string name="readme_md_title" translatable="false">README.md</string>
+
+    <!-- SourceList Fragment -->
+    <string name="source_branch_name">Branch: %s</string>
+    <string name="source_back_button" translatable="false">..</string>
+    <string name="source_menu_select_branch">Select branch</string>
+    <string name="source_menu_select_tag">Select tag</string>
+    <string name="source_preview_unavailable_title">Preview of binary file is not available</string>
+    <string name="source_preview_unavailable_subtitle">But you can open other files</string>
+    <string name="empty_tags">There are no tags in this repository</string>
+
+    <!-- Night mode -->
+    <string name="night_mode_dialog_title">Select theme</string>
+    <string name="night_mode_no">Light</string>
+    <string name="night_mode_yes">Dark</string>
+    <string name="night_mode_default">System default</string>
+    <string name="night_mode_cancel">Cancel</string>
+
+    <!-- Commit details -->
+    <string name="commit_message_title">Commit message</string>
+
+    <!-- Search -->
+    <string name="search">Search</string>
+    <string name="no_results_title">Nothing was found</string>
+    <string name="no_results_subtitle">Try searching different query. Maybe you have a typo</string>
+    <string name="workspace_and_repo" translatable="false">%s / %s</string>
+    <string name="search_not_enabled_title">Search is not enabled</string>
+    <string name="search_not_enabled_subtitle">Please, activate it.</string>
+    <string name="search_not_enabled_enable_button">Enable</string>
+
+    <!-- Track button -->
+    <string name="track_on">UNTRACK</string>
+    <string name="track_off">TRACK</string>
+
+    <!-- Tracking repos -->
+    <string name="track_title">Choose 5 repositories\nyou want!</string>
+    <string name="track_subtitle">You have to choose repositories you would like to work with. After choosing it you could see more activities from these repositories from your Activity screen!\n\n<b><i>Attention:</i></b> The selected repositories should not exceed <b>5</b>. Tracked repositories will not be synced between devices.</string>
+    <string name="track_choose"><b>Choose</b></string>
+    <string name="track_do_not_show_again">Don\'t show again</string>
+    <string name="track_you_have_chosen_more_repos_than_you_need"><b>You have chosen more repositories than possible</b></string>
+    <string name="track_choose_no_more_than_5_item">Choose no more than 5 items</string>
+    <string name="track_no_selected_repos" >Not selected</string>
+    <string name="track_btn_no_selected_repos" >Track selected repositories</string>
+    <string name="track_btn_number_selected_repos" >Track selected (%1$d) repositories</string>
+    <string name="track_number_selected_repos">%1$d repository selected</string>
+    <string name="loading" tools:ignore="TypographyEllipsis">Loading...</string>
+    <string name="track_screen_title">Tracking repositories setup</string>
+
+
+    <string name="add_another_account">Add another account</string>
+
+    <!-- Privacy policy -->
+    <string name="accept">Accept</string>
+
+    <string name="test_two_line" translatable="false">Name\nSurname</string>
+    <string name="replying_to_dummy" translatable="false">Replying to John Doe</string>
+    <string name="app_version_dummy" translatable="false">Version 1.0.0</string>
+    <string name="added_lines_dummy" translatable="false">+12</string>
+    <string name="removed_lines_dummy" translatable="false">-34</string>
+
+    <string name="give_a_gift">Give a gift</string>
+    <string name="donations_label_restore_my_donations"><u>Restore my donations</u></string>
+    <string name="donations_button_compliment">Compliment</string>
+    <string name="donations_label_give_a_gift_for_developers">Give a gift for developers</string>
+    <string name="donations_label_do_you_like_our_app">Do you like our app?</string>
+    <string name="donations_label_remind_me_later">Remind me later</string>
+    <string name="donation_empty_history">There is nothing to restore</string>
+    <string name="donation_empty_history_message">Sorry, but you haven\'t donated yet.</string>
+    <string name="donation_restore">Your donation has been restored</string>
+    <string name="donation_restore_message">Thank you for your donation!</string>
+    <string name="donation_success_message">We give you nice looking beautiful crown by the way &#128522;</string>
+    <string name="donation_success">Congratulation!</string>
+    <string name="donation_failed">Donation failed</string>
+    <string name="donation_failed_message">Something goes wrong &#9785;</string>
+    <string name="previous_pending_purchase">You already have one pending donation</string>
+    <string name="previous_pending_purchase_message">You will be able to donate again later.</string>
+    <string name="pending_purchase">Your donation is pending</string>
+    <string name="pending_purchase_message">You will be able to see it once it\'s done &#128522;</string>
+
+    <string name="subscriptions_get_premium_label"><u>Get premium</u></string>
+    <string name="subscriptions_get_premium_label_bold"><b>Get premium</b></string>
+    <string name="subscriptions_premium_label">Premium</string>
+    <string name="subscription_benefit">Choose a subscription plan to: \n •Remove Google ads\n •Edit issues</string>
+    <string name="subscriptions_title">Get premium</string>
+    <string name="subscribe_button">Subscribe</string>
+    <string name="not_free_trial">Not free trial!</string>
+    <string name="per_month">per month</string>
+    <string name="subscription_monthly">1 month plan</string>
+    <string name="subscription_yearly">1 year plan</string>
+    <string name="subscription_success_title">Thank you for subscription</string>
+    <string name="subscription_success_subtitle">"Now you get premium in your account!"</string>
+    <string name="subscription_failure">Subscription failed</string>
+    <string name="subscription_pending">You already have one pending payment</string>
+
+    <string name="attachments">Attachments</string>
+    <string name="no_attachments">No attachments</string>
+    <string name="issue">Issue</string>
+    <string name="resolve">Resolve</string>
+    <string name="open">Open</string>
+    <string name="my_pull_requests">My Pull requests</string>
+    <string name="my_issues">My Issues</string>
+    <string name="my_activity">My Activity</string>
+    <string name="activity_info_title">New Activity Screen</string>
+
+    <string name="activity_info_message">New activity screen can help you to show your activities from tracked repositories! \n<b>Hint:</b>  To get all your issues and pull request activities need to enable tracked repositories. To see issues make sure that you enable issue tracker settings in web version.</string>
+
+</resources>

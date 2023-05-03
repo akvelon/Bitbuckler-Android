@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 12 January 2021
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple">
+
+    <ImageView
+        android:id="@+id/fileStatus"
+        android:layout_width="@dimen/iconSizeSmall"
+        android:layout_height="@dimen/iconSizeSmall"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@drawable/ic_file_added" />
+
+    <TextView
+        android:id="@+id/filePath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingSmall"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/isMergeConflict"
+        app:layout_constraintStart_toEndOf="@+id/fileStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="app / src / main / java / com / akvelon / bitbuckler / App.kt" />
+
+    <ImageView
+        android:id="@+id/isMergeConflict"
+        android:layout_width="@dimen/iconSizeSmall"
+        android:layout_height="@dimen/iconSizeSmall"
+        android:layout_marginTop="@dimen/spacingTiniest"
+        android:layout_marginEnd="@dimen/spacingTiny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linesAdded"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_warning"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/linesAdded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorBackgroundLineAdded"
+        android:paddingStart="@dimen/spacingTiny"
+        android:paddingEnd="@dimen/spacingTiny"
+        android:textAppearance="?attr/textAppearanceCaption"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linesRemoved"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+12" />
+
+    <TextView
+        android:id="@+id/linesRemoved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorBackgroundLineRemoved"
+        android:paddingStart="@dimen/spacingTiny"
+        android:paddingEnd="@dimen/spacingTiny"
+        android:textAppearance="?attr/textAppearanceCaption"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/space"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="-31" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="@dimen/spacingNormal"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

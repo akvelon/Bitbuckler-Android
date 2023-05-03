@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BuildsProgressView">
+        <attr name="successful_count" format="integer" />
+        <attr name="failed_count" format="integer" />
+        <attr name="in_progress_count" format="integer" />
+        <attr name="stopped_count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PullRequestActions">
+        <attr name="approvedBackground" format="color" />
+        <attr name="requestChangesBackground" format="color" />
+        <attr name="prActionsDefaultBackground" format="color" />
+        <attr name="prActionsDefaultTextColor" format="color" />
+        <attr name="prActionsPressedTextColor" format="color" />
+    </declare-styleable>
+
+    <!-- Background -->
+    <attr name="colorBackgroundVariant" format="color" />
+    <attr name="backgroundPrAction" format="color" />
+    <attr name="changesBackground" format="color" />
+    <attr name="borderColor" format="color" />
+    <attr name="fullScreenProgressBackground" format="color" />
+    <attr name="menuBackground" format="color" />
+    <attr name="separatorColor" format="color" />
+    <attr name="toolbarMenuBackground" format="color" />
+    <attr name="bottomNavigationBackground" format="color" />
+    <attr name="bottomNavigationSeparator" format="color" />
+    <attr name="trackButtonBackground" format="color" />
+    <attr name="unTrackButtonBackground" format="color" />
+    <attr name="branchesPopupDivider" format="color" />
+
+    <!-- Add comment button -->
+    <attr name="addCommentButtonBackground" format="color" />
+    <attr name="addCommentButtonRipple" format="color" />
+
+    <!-- Skeleton layout -->
+    <attr name="skeletonLayoutMaskColor" format="color" />
+    <attr name="skeletonLayoutShimmerColor" format="color" />
+
+    <!-- Code text color -->
+    <attr name="textColorCodePrimary" format="color" />
+    <attr name="textColorCodeVariant" format="color" />
+    <attr name="textColorPrimary" format="color" />
+    <attr name="textColorPr" format="color" />
+    <attr name="trackButtonTextColor" format="color" />
+
+    <!-- Diff line background -->
+    <attr name="colorBackgroundLineAdded" format="color" />
+    <attr name="colorBackgroundLineConflicted" format="color" />
+    <attr name="colorBackgroundLineConflictedSection" format="color" />
+    <attr name="colorBackgroundLineRemoved" format="color" />
+
+    <!-- Custom theme attributes -->
+    <attr format="reference" name="textAppearanceTrackButton"/>
+
+</resources>

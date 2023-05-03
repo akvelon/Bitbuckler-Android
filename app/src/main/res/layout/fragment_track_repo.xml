@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Vladimir Vechkanov (vladimir.vechkanov@akvelon.com)
+ ~ on 1 July 2022
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screen.track_repo.TrackRepoSelectionFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorSurface"
+                app:navigationIcon="?attr/homeAsUpIndicator">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:maxWidth="276dp"
+                    android:text="@string/track_screen_title"
+                    android:textColor="?attr/textColorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.appbar.MaterialToolbar>
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayoutId" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/trackButton"
+        app:layout_constraintTop_toBottomOf="@id/divider">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRepositories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="com.akvelon.bitbuckler.ui.view.PreloadLinearLayoutManager"
+            tools:itemCount="15"
+            tools:listitem="@layout/item_repository" />
+
+        <include
+            android:id="@+id/emptyListView"
+            layout="@layout/layout_empty_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/errorView"
+            layout="@layout/layout_error_full_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/progressEmptyListView"
+            layout="@layout/layout_progress_empty_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/trackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:paddingVertical="@dimen/spacingSmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Track selected (2) repositories" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

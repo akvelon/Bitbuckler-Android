@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 16 December 2020
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/iconSizeExtraLarge"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingTiny"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/author"
+        app:layout_constraintBottom_toBottomOf="@id/state"
+        tools:ignore="ContentDescription"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingPreNormal"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toStartOf="@id/delimiter"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/delimiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:text="@string/delimiter"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toStartOf="@id/updatedOn"
+        app:layout_constraintStart_toEndOf="@id/author"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/updatedOn"
+        android:layout_width="@dimen/spacingZero"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingPreNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toStartOf="@id/commentCount"
+        app:layout_constraintStart_toEndOf="@id/delimiter"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="created 7 days ago" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="230dp"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/author"
+        tools:text="BIT-96: Colorize all SwipeToRefresh to blue" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:paddingStart="@dimen/spacingTiny"
+        android:paddingEnd="@dimen/spacingTiny"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:background="@drawable/bgr_pr_state_open"
+        tools:text="open"
+        tools:textColor="@color/openStateTextColor" />
+
+    <ImageView
+        android:id="@+id/typeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingPreNormal"
+        app:layout_constraintBottom_toBottomOf="@+id/state"
+        app:layout_constraintStart_toEndOf="@id/state"
+        app:layout_constraintTop_toTopOf="@id/state"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/ic_merge" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="@dimen/spacingZero"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/typeIcon"
+        app:layout_constraintStart_toEndOf="@id/typeIcon"
+        app:layout_constraintTop_toTopOf="@id/typeIcon"
+        android:text="@string/pr_type_mine" />
+
+    <TextView
+        android:id="@+id/commentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:drawablePadding="@dimen/spacingTiny"
+        android:textColor="@color/secondaryTextLight"
+        android:textSize="12sp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:drawableRightCompat="@drawable/ic_comments"
+        app:drawableTint="@color/secondaryTextLight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/updatedOn"
+        tools:text="23" />
+
+    <ImageView
+        android:id="@+id/iv_reviewer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        app:layout_constraintTop_toTopOf="@id/type"
+        app:layout_constraintBottom_toBottomOf="@id/typeIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_reviewer"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 15 December 2020
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/fragment_repository_details_scene">
+
+            <View
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/navigationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacingNormal"
+                android:layout_marginTop="@dimen/spacingNormal"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="?attr/homeAsUpIndicator"
+                app:tint="?attr/colorPrimaryVariant"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="@dimen/spacingNormal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/name"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@tools:sample/avatars"
+                />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:maxWidth="250dp"
+                android:layout_marginHorizontal="@dimen/spacingNormal"
+                android:layout_marginTop="@dimen/spacingHuge"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Toolbar.TitleText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/trackedButton"
+                app:layout_constraintStart_toEndOf="@id/avatar"
+                tools:text="BitbucklerBitbucklerBitbucklerBitbuckler"
+                />
+
+            <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/trackedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacingNormal"
+                app:layout_constraintStart_toEndOf="@id/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/name"
+                app:layout_constraintBottom_toBottomOf="@id/name"
+                android:background="@drawable/bgr_tracked_btn"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:textAppearance="?attr/textAppearanceTrackButton"
+                android:textColor="@color/track_button_text_color"
+                android:paddingHorizontal="@dimen/spacingTiny"
+                android:textOn="@string/track_on"
+                android:textOff="@string/track_off"
+                />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacingNormal"
+                android:layout_marginEnd="@dimen/spacingNormal"
+                android:background="@drawable/bgr_repository_description"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:maxLines="3"
+                android:textColor="?android:attr/textColorSecondary"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:text="Native (Kotlin) Android application for bitbucket.org" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScroll"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacingNormal"
+                android:background="@drawable/bgr_repository_details"
+                android:elevation="@dimen/elevationNormal"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/admobBannerHeight"
+                android:clipToPadding="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:id="@+id/badges"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:fillViewport="true"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/languageBadge"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacingNormal"
+                                android:layout_marginTop="@dimen/spacingNormal"
+                                android:layout_marginBottom="@dimen/spacingNormal"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/sizeBadge"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_default="spread"
+                                app:layout_constraintWidth_min="100dp"
+                                app:cardCornerRadius="@dimen/radiusNormal"
+                                app:cardElevation="@dimen/elevationNormal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:id="@+id/languageImage"
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:layout_marginTop="@dimen/spacingNormal"
+                                        android:paddingStart="@dimen/spacingSmall"
+                                        android:paddingTop="@dimen/spacingSmall"
+                                        android:paddingEnd="@dimen/spacingSmall"
+                                        android:paddingBottom="@dimen/spacingSmall"
+                                        app:srcCompat="@drawable/ic_code_sign"
+                                        app:tint="?attr/colorPrimary"
+                                        tools:ignore="ContentDescription" />
+
+                                    <TextView
+                                        android:id="@+id/language"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacingSmall"
+                                        android:layout_marginBottom="@dimen/spacingNormal"
+                                        android:textAppearance="?attr/textAppearanceCaption"
+                                        android:textColor="?attr/textColorPrimary"
+                                        tools:text="Android" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/sizeBadge"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacingNormal"
+                                android:layout_marginTop="@dimen/spacingNormal"
+                                android:layout_marginBottom="@dimen/spacingNormal"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/isPrivateBadge"
+                                app:layout_constraintStart_toEndOf="@+id/languageBadge"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_default="spread"
+                                app:layout_constraintWidth_min="100dp"
+                                app:cardCornerRadius="@dimen/radiusNormal"
+                                app:cardElevation="@dimen/elevationNormal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:id="@+id/sizeImage"
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:layout_marginTop="@dimen/spacingNormal"
+                                        android:paddingStart="@dimen/spacingSmall"
+                                        android:paddingTop="@dimen/spacingSmall"
+                                        android:paddingEnd="@dimen/spacingSmall"
+                                        android:paddingBottom="@dimen/spacingSmall"
+                                        app:srcCompat="@drawable/ic_file_size"
+                                        app:tint="?attr/colorPrimary"
+                                        tools:ignore="ContentDescription" />
+
+                                    <TextView
+                                        android:id="@+id/size"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacingSmall"
+                                        android:layout_marginBottom="@dimen/spacingNormal"
+                                        android:textAppearance="?attr/textAppearanceCaption"
+                                        android:textColor="?attr/textColorPrimary"
+                                        tools:text="2.3 MB" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/isPrivateBadge"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacingNormal"
+                                android:layout_marginTop="@dimen/spacingNormal"
+                                android:layout_marginBottom="@dimen/spacingNormal"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/updatedOnBadge"
+                                app:layout_constraintStart_toEndOf="@+id/sizeBadge"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_default="spread"
+                                app:layout_constraintWidth_min="100dp"
+                                app:cardCornerRadius="@dimen/radiusNormal"
+                                app:cardElevation="@dimen/elevationNormal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:id="@+id/isPrivateImage"
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:layout_marginTop="@dimen/spacingNormal"
+                                        android:paddingStart="@dimen/spacingSmall"
+                                        android:paddingTop="@dimen/spacingSmall"
+                                        android:paddingEnd="@dimen/spacingSmall"
+                                        android:paddingBottom="@dimen/spacingSmall"
+                                        app:srcCompat="@drawable/ic_lock_repo"
+                                        app:tint="?attr/colorPrimary"
+                                        tools:ignore="ContentDescription" />
+
+                                    <TextView
+                                        android:id="@+id/isPrivate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacingSmall"
+                                        android:layout_marginBottom="@dimen/spacingNormal"
+                                        android:textAppearance="?attr/textAppearanceCaption"
+                                        android:textColor="?attr/textColorPrimary"
+                                        tools:text="Private" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/updatedOnBadge"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacingNormal"
+                                android:layout_marginTop="@dimen/spacingNormal"
+                                android:layout_marginEnd="@dimen/spacingNormal"
+                                android:layout_marginBottom="@dimen/spacingNormal"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/isPrivateBadge"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_default="spread"
+                                app:layout_constraintWidth_min="100dp"
+                                app:cardCornerRadius="@dimen/radiusNormal"
+                                app:cardElevation="@dimen/elevationNormal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:id="@+id/updatedOnImage"
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:layout_marginTop="@dimen/spacingNormal"
+                                        android:paddingStart="@dimen/spacingSmall"
+                                        android:paddingTop="@dimen/spacingSmall"
+                                        android:paddingEnd="@dimen/spacingSmall"
+                                        android:paddingBottom="@dimen/spacingSmall"
+                                        app:srcCompat="@drawable/ic_updated"
+                                        app:tint="?attr/colorPrimary"
+                                        tools:ignore="ContentDescription" />
+
+                                    <TextView
+                                        android:id="@+id/updatedOn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacingSmall"
+                                        android:layout_marginBottom="@dimen/spacingNormal"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:paddingStart="4dp"
+                                        android:paddingEnd="4dp"
+                                        android:textAppearance="?attr/textAppearanceCaption"
+                                        android:textColor="?attr/textColorPrimary"
+                                        tools:text="14 days ago" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/sourceSection"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/radiusNormal"
+                        android:background="@drawable/bgr_repository_ripple_line"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/badges">
+
+                        <ImageView
+                            android:id="@+id/sourceImage"
+                            android:layout_width="@dimen/iconSizeMedium"
+                            android:layout_height="@dimen/iconSizeMedium"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bgr_repository_button"
+                            android:paddingStart="6dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingBottom="6dp"
+                            app:srcCompat="@drawable/ic_code"
+                            app:tint="?attr/colorPrimary"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/sourceTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingNormal"
+                            android:text="@string/source_title"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/sourceArrow"
+                            android:layout_width="@dimen/iconSizeNormal"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingTiny"
+                            android:paddingTop="@dimen/spacingTiny"
+                            android:paddingEnd="@dimen/spacingTiny"
+                            android:paddingBottom="@dimen/spacingTiny"
+                            app:srcCompat="@drawable/ic_arrow_right"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/commitsSection"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/radiusNormal"
+                        android:background="@drawable/bgr_repository_ripple_line"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sourceSection">
+
+                        <ImageView
+                            android:id="@+id/commitsImage"
+                            android:layout_width="@dimen/iconSizeMedium"
+                            android:layout_height="@dimen/iconSizeMedium"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bgr_repository_button"
+                            android:paddingStart="6dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingBottom="6dp"
+                            app:srcCompat="@drawable/ic_commit"
+                            app:tint="?attr/colorPrimary"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/commitsTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingNormal"
+                            android:text="@string/commits_title"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/commitsArrow"
+                            android:layout_width="@dimen/iconSizeNormal"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingTiny"
+                            android:paddingTop="@dimen/spacingTiny"
+                            android:paddingEnd="@dimen/spacingTiny"
+                            android:paddingBottom="@dimen/spacingTiny"
+                            app:srcCompat="@drawable/ic_arrow_right"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/branchesSection"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingNormal"
+                        android:background="@drawable/bgr_repository_ripple_line"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commitsSection">
+
+                        <ImageView
+                            android:id="@+id/branchesImage"
+                            android:layout_width="@dimen/iconSizeMedium"
+                            android:layout_height="@dimen/iconSizeMedium"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bgr_repository_button"
+                            android:paddingStart="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:srcCompat="@drawable/ic_branch"
+                            app:tint="?attr/colorPrimary"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/branchesTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingNormal"
+                            android:text="@string/branches_title"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/branchesArrow"
+                            android:layout_width="@dimen/iconSizeNormal"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:paddingStart="4dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="4dp"
+                            android:paddingBottom="4dp"
+                            app:srcCompat="@drawable/ic_arrow_right"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pullRequestsSection"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/radiusNormal"
+                        android:background="@drawable/bgr_repository_ripple_line"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/branchesSection">
+
+                        <ImageView
+                            android:id="@+id/pullRequestImage"
+                            android:layout_width="@dimen/iconSizeMedium"
+                            android:layout_height="@dimen/iconSizeMedium"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bgr_repository_button"
+                            android:paddingStart="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:srcCompat="@drawable/ic_pull_request"
+                            app:tint="?attr/colorPrimary"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/pullRequestTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingNormal"
+                            android:text="@string/pull_requests_title"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/pullRequestArrow"
+                            android:layout_width="@dimen/iconSizeNormal"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingTiny"
+                            android:paddingTop="@dimen/spacingTiny"
+                            android:paddingEnd="@dimen/spacingTiny"
+                            android:paddingBottom="@dimen/spacingTiny"
+                            app:srcCompat="@drawable/ic_arrow_right"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/issuesSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingNormal"
+                        android:background="@drawable/bgr_repository_ripple_line"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pullRequestsSection">
+
+                        <ImageView
+                            android:id="@+id/issuesImage"
+                            android:layout_width="@dimen/iconSizeMedium"
+                            android:layout_height="@dimen/iconSizeMedium"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bgr_repository_button"
+                            android:paddingStart="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:srcCompat="@drawable/ic_issue"
+                            app:tint="?attr/colorPrimary"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/issuesTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/spacingNormal"
+                            android:text="@string/issues_title"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/issuesArrow"
+                            android:layout_width="24dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:paddingStart="4dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="4dp"
+                            android:paddingBottom="4dp"
+                            app:srcCompat="@drawable/ic_arrow_right"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/readmeProgress"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacingLarge"
+                        android:indeterminateTint="?attr/colorPrimary"
+                        android:indeterminateTintMode="src_atop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/issuesSection"
+                        tools:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/readmeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingLarge"
+                        android:text="@string/readme_md_title"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/issuesSection" />
+
+                    <TextView
+                        android:id="@+id/readmeContent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingNormal"
+                        android:layout_marginTop="@dimen/spacingNormal"
+                        android:layout_marginEnd="@dimen/spacingNormal"
+                        android:layout_marginBottom="@dimen/spacingNormal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/readmeTitle"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/readmeGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="readmeTitle,readmeContent"
+                        tools:visibility="visible" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/emptyProgress"
+        layout="@layout/layout_progress_empty_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/errorView"
+        layout="@layout/layout_error_full_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone" />
+
+</FrameLayout>

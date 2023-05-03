@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="@dimen/spacingSmall"
+    android:layout_marginStart="@dimen/spacingTiniest"
+    android:layout_marginEnd="14dp"
+    app:cardCornerRadius="@dimen/radiusTiny"
+    tools:cardBackgroundColor="@color/white"
+    tools:layout_height="90dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/spacingNormal">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/iconSizeExtraLarge"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/spacingNormal"
+            android:src="@drawable/circle_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:includeFontPadding="false"
+            android:text="samplename"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBottom_toTopOf="@id/title"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/delimiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingTiny"
+            android:includeFontPadding="false"
+            android:text="@string/delimiter"
+            app:layout_constraintBaseline_toBaselineOf="@id/author"
+            app:layout_constraintStart_toEndOf="@id/author" />
+
+        <TextView
+            android:id="@+id/updatedOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingTiny"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="sampledate"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBaseline_toBaselineOf="@id/author"
+            app:layout_constraintStart_toEndOf="@id/delimiter" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingTiniest"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="BIT-96: Colorize all SwipeToRefresh to blue"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintBottom_toTopOf="@id/state"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/author" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingTiny"
+            android:background="@drawable/bgr_pr_state_open"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/spacingTiny"
+            android:paddingVertical="@dimen/spacingTiniest"
+            android:text="open"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:textColor="@color/openStateTextColor" />
+
+        <ImageView
+            android:id="@+id/typeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingPreNormal"
+            android:src="@drawable/ic_merge"
+            app:layout_constraintBottom_toBottomOf="@+id/state"
+            app:layout_constraintStart_toEndOf="@id/state"
+            app:layout_constraintTop_toTopOf="@id/state"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="@dimen/spacingZero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:text="@string/pr_type_mine"
+            android:textAppearance="?attr/textAppearanceListItemSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/typeIcon"
+            app:layout_constraintStart_toEndOf="@id/typeIcon"
+            app:layout_constraintTop_toTopOf="@id/typeIcon" />
+
+        <TextView
+            android:id="@+id/commentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacingTiny"
+            android:includeFontPadding="false"
+            android:text="23"
+            android:textAppearance="?attr/textAppearanceListItemSmall"
+            android:textColor="@color/mainColorLight"
+            app:layout_constraintBaseline_toBaselineOf="@id/type"
+            app:layout_constraintEnd_toStartOf="@id/commentIcon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/commentIcon"
+            android:layout_width="@dimen/iconSizeTiny"
+            android:layout_height="@dimen/iconSizeTiny"
+            android:src="@drawable/ic_comments"
+            android:tint="@color/mainColorLight"
+            app:layout_constraintBottom_toBottomOf="@id/commentCount"
+            app:layout_constraintEnd_toStartOf="@id/iv_reviewer"
+            app:layout_constraintTop_toTopOf="@id/commentCount" />
+
+        <ImageView
+            android:id="@+id/iv_reviewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:src="@drawable/ic_reviewer"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/typeIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/type"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 18 December 2020
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/emptyListIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacingLarge"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        app:srcCompat="@drawable/ic_tree"
+        app:tint="?attr/colorPrimaryVariant"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/emptyListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:text="@string/empty_list_title"
+        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+    <TextView
+        android:id="@+id/emptyListSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:text="@string/empty_list_subtitle"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:elevation="@dimen/elevationNormal"
+        android:stateListAnimator="@null"
+        android:text="@string/empty_list_button"
+        android:textAllCaps="false" />
+
+</LinearLayout>

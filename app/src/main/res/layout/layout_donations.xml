@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacingMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        style="@style/TitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingGiant"
+        android:text="@string/donations_label_do_you_like_our_app"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDialogSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:text="@string/donations_label_give_a_gift_for_developers"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogTitle" />
+
+    <com.akvelon.bitbuckler.ui.view.billing.DonationsView
+        android:id="@+id/cardFirst"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:layout_marginEnd="@dimen/spacingTiny"
+        app:cardCornerRadius="@dimen/radiusTiny"
+        app:layout_constraintBottom_toTopOf="@id/cardThird"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/cardSecond"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogSubtitle" />
+
+    <com.akvelon.bitbuckler.ui.view.billing.DonationsView
+        android:id="@+id/cardSecond"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingMedium"
+        app:cardCornerRadius="@dimen/radiusTiny"
+        app:layout_constraintBottom_toTopOf="@id/cardFourth"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toEndOf="@id/cardFirst"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogSubtitle" />
+
+    <com.akvelon.bitbuckler.ui.view.billing.DonationsView
+        android:id="@+id/cardThird"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacingSmall"
+        android:layout_marginEnd="@dimen/spacingTiny"
+        app:cardCornerRadius="@dimen/radiusTiny"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/cardFourth"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/cardFirst" />
+
+    <com.akvelon.bitbuckler.ui.view.billing.DonationsView
+        android:id="@+id/cardFourth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingSmall"
+        app:cardCornerRadius="@dimen/radiusTiny"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toEndOf="@id/cardThird"
+        app:layout_constraintTop_toBottomOf="@id/cardSecond" />
+
+    <Button
+        android:id="@+id/btPurchase"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dialogButtonHeight"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:backgroundTint="@color/mainColorLight"
+        android:stateListAnimator="@null"
+        android:text="@string/donations_button_compliment"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/cardFourth" />
+
+    <TextView
+        android:id="@+id/btRestore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:gravity="center"
+        android:text="@string/donations_label_restore_my_donations"
+        android:textColor="@color/mainColorLight"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/btPurchase" />
+
+    <CheckBox
+        android:id="@+id/checkBoxReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:layout_marginBottom="@dimen/spacingLarge"
+        android:checked="true"
+        android:text="@string/donations_label_remind_me_later"
+        android:textColor="@color/secondaryTextLight"
+        android:theme="@style/checkBoxStyle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintTop_toBottomOf="@id/btPurchase" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/spacingMedium" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/spacingMedium" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 13 May 2021
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingMedium"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:text="@string/empty_tags"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        android:textStyle="italic" />
+
+</FrameLayout>

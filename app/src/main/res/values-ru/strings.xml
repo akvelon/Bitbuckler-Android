@@ -1,0 +1,320 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Roman Gromov (roman.gromov@akvelon.com)
+ ~ on 20 November 2020
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Error messages -->
+    <string name="error_no_internet">Произошла ошибка. Пожалуйста проверьте интернет соединение и попробуйте снова</string>
+    <string name="error_unknown">Что-то пошло не так. Пожалуйста попробуйте еще раз</string>
+
+    <!-- Bottom Navigation -->
+    <string name="tab_title_activity">События</string>
+    <string name="tab_title_workspaces">Репозитории</string>
+    <string name="tab_title_account">Профиль</string>
+
+    <!-- ActivityList Fragment -->
+    <string name="activity_list_title">События</string>
+    <string name="pr_link">PR ссылка</string>
+    <string name="submit_pr_navigation">ПОДТВЕРДИТЬ</string>
+    <string name="cancel_pr_navigation">ОТМЕНИТЬ</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="submit"><b>Подтвердить</b></string>
+    <string name="pull_request_link">Ссылка на пул реквест</string>
+    <string name="past_pull_request_link">Вставьте ссылку на пул реквест:</string>
+    <string name="url_should_be_valid">Ссылка не валидная</string>
+    <string name="not_a_bitbucket_repository">Не репозиторий Битбакета</string>
+    <string name="link">Ссылка</string>
+    <string name="filter">Фильтровать</string>
+    <string name="activities_menu">Меню экрана с активностями</string>
+    <string name="expand_filter_options">Раскрыть опции фильтрации</string>
+    <string name="track_repos">Отследить репо</string>
+
+    <!-- WorkspaceList Fragment -->
+    <string name="workspace_list_recent_repositories">Недавние Репозитории</string>
+    <string name="workspace_list_title">Пространства</string>
+
+    <!-- RepositoryList Fragment -->
+    <string name="repository_list_title">Репозитории</string>
+    <string name="search_hint">Поиск по Репозиториям</string>
+
+    <!-- ProjectList Fragment -->
+    <string name="project_list_title">Проекты</string>
+
+    <!-- Empty List -->
+    <string name="empty_list_title">Здесь пока ничего нет</string>
+    <string name="empty_list_subtitle">Но скоро появится</string>
+    <string name="empty_list_button">Обновить</string>
+
+    <!-- Error screen -->
+    <string name="error_list_title">Бип-буп-бип</string>
+    <string name="error_list_subtitle">Что-то пошло не так. Попробуйте еще раз</string>
+    <string name="error_list_button">Повторить</string>
+    <string name="error_list_back">Перейти обратно</string>
+
+    <!-- No internet connection screen -->
+    <string name="no_internet_title">Нет Интернет соединения</string>
+    <string name="no_internet_subtitle">Пожалуйста, проверьте соединение и попробуйте еще раз</string>
+
+    <!-- Progress error list -->
+    <string name="progress_error_title">Что-то пошло не так</string>
+    <string name="progress_error_button">Ещё разок</string>
+
+    <!-- No access screen -->
+    <string name="no_access_title">Извините, вам сюда нельзя</string>
+    <string name="no_access_subtitle">Это приватный репозиторий, и у вас нет доступа. Попытайтесь обратиться к администратору репозитория.</string>
+
+    <!-- Time -->
+    <string name="created">Создан %s</string>
+    <string name="updated">обновлен %s</string>
+
+    <!-- Time periods -->
+    <string name="days_ago">%s дней назад</string>
+    <string name="yesterday">вчера</string>
+    <string name="hours_ago">%s часов назад</string>
+    <string name="an_hour_ago">час назад</string>
+    <string name="minutes_ago">%s минут назад</string>
+    <string name="a_minute_ago">минуту назад</string>
+    <string name="just_now">только что</string>
+
+    <!-- Time periods short -->
+    <string name="days_ago_short">%sд</string>
+    <string name="hours_ago_short">%sч</string>
+    <string name="minutes_ago_short">%sм</string>
+    <string name="now">сейчас</string>
+
+    <!-- Start Fragment -->
+    <string name="button_login">Войти с Bitbucket</string>
+    <string name="motto">Работа с <font color="#115EFF">Bitbucket</font>\nв удобном формате.</string>
+    <string name="install_browser">Пожалуйста установите/включите веб браузер</string>
+
+    <!-- Account Fragment -->
+    <string name="confirm_logout_title">Подтвердите выход</string>
+    <string name="confirm_logout_message">Произойдет очистка всех пользовательских настроек и кэша с вашего
+        устройства. Вы вернетесь на страницу входа</string>
+    <string name="confirm_logout_yes">Выйти</string>
+    <string name="confirm_logout_no">Отмена</string>
+    <string name="app_version">Версия %s</string>
+    <string name="contact_us">Связаться с нами</string>
+    <string name="app_theme">Тема</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="switch_account">Сменить пользователя</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="logout">Выйти</string>
+
+    <!-- PullRequests Fragment -->
+    <string name="pull_requests_title">Пулл реквесты</string>
+    <string name="approved_by">Одобренно</string>
+    <string name="not_approved_yet">Пока не одобренно</string>
+
+    <!-- PullRequest Details -->
+    <string name="passed">Успешно</string>
+    <string name="count_of">%s из %s</string>
+    <string name="files_button">Файлы</string>
+    <string name="commits_button">Коммиты</string>
+    <string name="reviewers">Проверяющие</string>
+    <string name="no_reviewers">Нет проверяющих</string>
+    <string name="builds">Сборки</string>
+    <string name="no_builds">Нет сборок</string>
+    <string name="description">Описание</string>
+    <string name="no_description">Нет описания</string>
+    <string name="comments">Комментарии</string>
+    <string name="replying_to">Ответ пользователю %s</string>
+
+    <!-- PullRequest State  -->
+    <string name="pr_state_open">Открытые</string>
+    <string name="pr_state_merged">Смерженные</string>
+    <string name="pr_state_declined">Отклоненные</string>
+    <string name="pr_state_superseded">Замененные</string>
+
+    <!-- PullRequest Type  -->
+    <string name="pr_type_mine">Пулл реквест</string>
+    <string name="pr_type_i_am_reviewing" tools:ignore="ExtraTranslation">Я рецензирую</string>
+
+    <!-- PullRequest Actions -->
+    <string name="pr_action_merge">Влить</string>
+    <string name="pr_action_approve">Одобрить</string>
+    <string name="pr_action_unapprove">Не одобрять</string>
+    <string name="pr_action_decline">Отклонить</string>
+    <string name="pr_action_request_changes">Вернуть</string>
+    <string name="pr_action_changes_requested">Возвращено</string>
+
+    <!-- PullRequest Branches Dialog -->
+    <string name="pr_branch_source">Источник</string>
+    <string name="pr_branch_target">Цель</string>
+
+    <!-- PullRequest Decline Dialog -->
+    <string name="confirm_decline_title">Подтвердите отклонение</string>
+    <string name="confirm_decline_message">Отклонение пулл реквеста нельзя отменить</string>
+    <string name="confirm_decline_yes">Отклонить</string>
+    <string name="confirm_decline_no">Отмена</string>
+
+    <!-- PullRequest Merge Dialog -->
+    <string name="confirm_merge_title">Залить пулл реквест</string>
+    <string name="confirm_merge_commit_title">Сообщение коммита</string>
+    <string name="confirm_merge_strategy_title">Стратегия слияния</string>
+    <string name="confirm_merge_close_branch">Закрыть исходную ветку</string>
+    <string name="confirm_merge_yes">Залить</string>
+    <string name="confirm_merge_no">Отмена</string>
+
+    <!-- PullRequest Delete Comment Dialog -->
+    <string name="pr_confirm_delete_comment_title">Удалить комментарий</string>
+    <string name="pr_confirm_delete_comment_message">Вы уверенны, что хотите удалить этот комментарий? </string>
+    <string name="pr_confirm_delete_comment_yes"><b>Удалить</b></string>
+    <string name="pr_confirm_delete_comment_no"><b>Отмена</b></string>
+
+    <!-- PullRequest Comments -->
+    <string name="pr_comment_reply">Ответить</string>
+    <string name="pr_comment_edit">Редактировать</string>
+    <string name="pr_comment_delete">Удалить</string>
+    <string name="pr_comment_button">Написать комментарий…</string>
+    <string name="pr_comment_deleted">Комментарий удален</string>
+
+    <!-- Add new comment -->
+    <string name="comment_send">Отправить</string>
+    <string name="comment_hint">Комментарий</string>
+    <string name="comment_title">Новый комментарий</string>
+    <string name="comment_edit_title">Редактировать комментарий</string>
+    <string name="comment_updated_on">%м</string>
+
+    <!-- Add new comment confirm dialog -->
+    <string name="confirm_leave_comment_title">Подтверждение</string>
+    <string name="confirm_leave_comment_message">Если вы уйдете, то информация будет утеряна</string>
+    <string name="confirm_leave_comment_yes">Покинуть</string>
+    <string name="confirm_leave_comment_no">Отмена</string>
+
+    <!-- PullRequest Changes -->
+    <string name="files_title">Файлы</string>
+
+    <!-- PullRequest Diff Line -->
+    <string name="line_binary_content">"Предварительный просмотр этого файла недоступен."</string>
+    <string name="large_diff_title">Предварительный просмотр этого файла недоступен</string>
+    <string name="large_diff_subtitle">Эти изменения слишком большие</string>
+
+    <!-- PullRequest Empty Diff -->
+    <string name="empty_diff_title">Здесь ничего нет</string>
+    <string name="empty_diff_subtitle">Исходная или целевая ветка была удалена, или изменения уже находятся в целевом репозитории.</string>
+    <string name="empty_diff_button">Обновить</string>
+
+    <!-- IssueList Fragment -->
+    <string name="issue_filter_all">Все</string>
+    <string name="issue_filter_open">Открытые</string>
+    <string name="issue_filter_mine">Мои задачи</string>
+
+    <!-- IssueDetails Fragment -->
+    <string name="assignee">Ответсвенный</string>
+    <string name="unassigned">Не назначен</string>
+    <string name="reporter">Создатель</string>
+    <string name="vote">1 голос</string>
+    <string name="votes">%s голосов</string>
+    <string name="watcher">1 смотрящий</string>
+    <string name="watchers">%s смотрящих</string>
+
+    <!-- Repository Details Fragment -->
+    <string name="branches_title">Ветки</string>
+    <string name="issues_title">Задачи</string>
+    <string name="source_title">Исходный код</string>
+    <string name="commits_title">Коммиты</string>
+    <string name="private_repository">Приватный</string>
+    <string name="public_repository">Публичный</string>
+
+    <!-- SourceList Fragment -->
+    <string name="source_branch_name">Ветка: %s</string>
+    <string name="source_menu_select_branch">Выбрать ветку</string>
+    <string name="source_menu_select_tag">Выбрать тэг</string>
+    <string name="source_preview_unavailable_title">Просмотр бинарного файла недоступен</string>
+    <string name="source_preview_unavailable_subtitle">Но вы можете открыть другие файлы</string>
+    <string name="empty_tags">В этом репозитории нет тегов</string>
+
+    <!-- Night mode -->
+    <string name="night_mode_dialog_title">Выбрать тему</string>
+    <string name="night_mode_no">Светлая</string>
+    <string name="night_mode_yes">Темная</string>
+    <string name="night_mode_default">Как в системе</string>
+    <string name="night_mode_cancel">Отмена</string>
+
+    <!-- Commit details -->
+    <string name="commit_message_title">Сообщение коммита</string>
+
+    <!-- Search -->
+    <string name="search">Поиск</string>
+    <string name="no_results_title">Ничего не найдено</string>
+    <string name="search_not_enabled_title">Поиск отключен</string>
+    <string name="search_not_enabled_subtitle">Пожалуйста, активируйте его</string>
+    <string name="search_not_enabled_enable_button">Включить</string>
+    <string name="no_results_subtitle">Попробуйте ввести другой запрос. Возможно, у вас опечатка</string>
+
+    <!-- Track button -->
+    <string name="track_on">не отсл.</string>
+    <string name="track_off">отсл.</string>
+
+    <!-- Tracking repos -->
+    <string name="track_title">Выберите 5 репозиториев для отслеживания</string>
+    <string name="track_subtitle">Выберите репозитории, с которыми вы хотите работать. Вы сможете увидеть больше активностей по выбранным репозиториям!\n\n<b><i>Внимание:</i></b> Выбор репозиторий для каждого мобильного устройства может быть разным. Выбранные репозитории не синхронизируются между устройствами.</string>
+    <string name="track_choose"><b>Выбрать</b></string>
+    <string name="cancel">Отменить</string>
+    <string name="track_do_not_show_again">Не показывать снова</string>
+    <string name="track_no_selected_repos" >Не выбрано</string>
+    <string name="track_number_selected_repos">%d репозиториев выбрано</string>
+    <string name="track_btn_no_selected_repos" >Отследить выбранные</string>
+    <string name="track_btn_number_selected_repos" >Отследить (%1$d) репозиториев</string>
+    <string name="track_you_have_chosen_more_repos_than_you_need">Вы выбрали больше репозиториев чем вам доступно</string>
+    <string name="track_choose_no_more_than_5_item">Выберите не больше 5 ти</string>
+    <string name="track_screen_title">Настройка отслеживаемых репозиториев</string>
+
+    <string name="add_another_account">Добавить другого пользователя</string>
+
+    <!-- Privacy policy -->
+    <string name="accept">Подтвердить</string>
+    <string name="loading" tools:ignore="TypographyEllipsis">Загрузка...</string>
+
+
+    <string name="give_a_gift">Сделать подарок</string>
+    <string name="donations_label_restore_my_donations"><u>Восстановить мои пожертвования</u></string>
+    <string name="donations_button_compliment">Комплимент</string>
+    <string name="donations_label_give_a_gift_for_developers">Сделать подарок разработчикам</string>
+    <string name="donations_label_do_you_like_our_app">Нравится наше приложение?</string>
+    <string name="donations_label_remind_me_later">Напомнить позже</string>
+    <string name="donation_empty_history">Нечего восстанавливать</string>
+    <string name="donation_empty_history_message">Извините, но вы еще не повертвовали</string>
+    <string name="donation_restore">Ваше пожертвование восстановлено</string>
+    <string name="donation_restore_message">Спасибо за повертвования!</string>
+    <string name="donation_success_message">Мы подарили вам красивую корону &#128522;</string>
+    <string name="donation_success">Поздравляем!</string>
+    <string name="donation_failed">Пожертвование не удалось</string>
+    <string name="donation_failed_message">Что-то пошло не так &#9785;</string>
+    <string name="previous_pending_purchase">У вас уже есть одно пожертвование в ожидании</string>
+    <string name="previous_pending_purchase_message"> Вы можете сделать пожертвование позже.</string>
+    <string name="pending_purchase">Ваше пожертвование в ожидании</string>
+    <string name="pending_purchase_message">Вы сможете увидеть как только операция завершена &#128522;</string>
+
+    <string name="subscriptions_get_premium_label"><u>Премиум подписка</u></string>
+    <string name="subscriptions_get_premium_label_bold"><b>Премиум подписка</b></string>
+    <string name="subscriptions_premium_label">Премиум</string>
+    <string name="subscription_benefit">Выберите план подписки, \n •чтобы убрать рекламу\n •редактировать задачи</string>
+    <string name="subscriptions_title">Премиум подписка</string>
+    <string name="subscribe_button">Подписаться</string>
+    <string name="not_free_trial">Без пробного периода!</string>
+    <string name="per_month">в месяц</string>
+    <string name="subscription_monthly">Ежемесячно</string>
+    <string name="subscription_yearly">Ежегодно</string>
+    <string name="subscription_success_title">Спасибо за подписку</string>
+    <string name="subscription_success_subtitle">"Вы успешно обрели премиум для вашего аккаунта!"</string>
+    <string name="subscription_failure">Подписка не удалась</string>
+    <string name="subscription_pending">У вас уже есть один ожидающий платеж</string>
+
+    <string name="attachments">Вложения</string>
+    <string name="no_attachments">Нет вложений</string>
+    <string name="issue">Задача</string>
+    <string name="resolve">Решен</string>
+    <string name="open">Открыт</string>
+    <string name="my_pull_requests">Мои пулл реквесты</string>
+    <string name="my_issues">Мои задачи</string>
+    <string name="my_activity">Мои активности</string>
+    <string name="activity_info_title">Новое окно активностей</string>
+
+    <string name="activity_info_message">Оно поможет вам увидеть все ваши активности в пулл реквестах и задачах (issues)\n<b>Подсказка:</b> Чтобы увидеть всю информацию о задачах не забудьте включить функционал отслеживание репозиторий. Чтобы увидеть задач не забудьте включить issue tracker в веб версии.</string>
+
+</resources>

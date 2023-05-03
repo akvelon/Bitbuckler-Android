@@ -1,0 +1,119 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Roman Gromov (roman.gromov@akvelon.com)
+ ~ on 20 November 2020
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blueDark</item>
+        <item name="colorOnPrimary">@color/primaryBackgroundColorLight</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/cyan</item>
+        <item name="colorSecondaryVariant">@color/cyanDark</item>
+
+        <!-- Surface color -->
+        <item name="colorSurface">@color/primaryBackgroundColorLight</item>
+        <item name="colorOnSurface">@color/black</item>
+
+        <!-- Background color -->
+        <item name="android:colorBackground">@color/primaryBackgroundColorLight</item>
+        <item name="colorBackgroundVariant">@color/primaryBackgroundColorLight</item>
+        <item name="changesBackground">@color/textFieldBackground</item>
+        <item name="colorOnBackground">@color/grayDark</item>
+        <item name="borderColor">@color/grayLight</item>
+        <item name="swipeRefreshLayoutProgressSpinnerBackgroundColor">@color/primaryBackgroundColorLight</item>
+        <item name="fullScreenProgressBackground">@color/white60</item>
+        <item name="menuBackground">@color/separatorLight</item>
+        <item name="toolbarMenuBackground">@color/primaryBackgroundColorLight</item>
+        <item name="separatorColor">@color/separatorLight</item>
+        <item name="backgroundPrAction">@color/white</item>
+        <item name="trackButtonBackground">@color/white</item>
+        <item name="unTrackButtonBackground">@color/white</item>
+        <item name="bottomNavigationSeparator">@color/separatorLight</item>
+
+        <!-- Text color -->
+        <item name="android:textColorPrimary">@color/primaryTextLight</item>
+        <item name="android:textColorSecondary">@color/secondaryTextLight</item>
+        <item name="android:textColorTertiary">@color/graySmoke</item>
+        <item name="textColorCodePrimary">@color/grayDark</item>
+        <item name="textColorCodeVariant">@color/secondaryTextLight</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="textColorPrimary">@color/primaryTextLight</item>
+        <item name="trackButtonTextColor">@color/textFieldTextLight</item>
+
+        <!-- Divider -->
+        <item name="android:listDivider">@color/separatorLight</item>
+        <item name="branchesPopupDivider">@color/separatorLight</item>
+
+        <!-- Control Highlight -->
+        <item name="colorControlHighlight">@color/grayLight</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l" tools:ignore="ObsoleteSdkInt">@color/primaryBackgroundColorLight</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Toolbar -->
+        <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
+        <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+
+        <!-- Add comment button -->
+        <item name="addCommentButtonBackground">@color/grayLight</item>
+        <item name="addCommentButtonRipple">@color/secondaryTextLight</item>
+
+        <!-- Skeleton layout -->
+        <item name="skeletonLayoutMaskColor">@color/gainsboro</item>
+        <item name="skeletonLayoutShimmerColor">@color/separatorLight</item>
+
+        <!-- Diff line background -->
+        <item name="colorBackgroundLineAdded">@color/greenLightMrDiff</item>
+        <item name="colorBackgroundLineConflicted">@color/orangeLight</item>
+        <item name="colorBackgroundLineConflictedSection">@color/orangeLightest</item>
+        <item name="colorBackgroundLineRemoved">@color/redLightMrDiff</item>
+
+        <!-- Pull Request actions -->
+        <item name="approvedBackground">@color/approvedBackgroundColor</item>
+        <item name="requestChangesBackground">@color/orange</item>
+        <item name="prActionsDefaultBackground">?attr/colorSurface</item>
+        <item name="prActionsDefaultTextColor">@color/primaryTextLight</item>
+        <item name="prActionsPressedTextColor">@color/grayLightest</item>
+        <item name="textColorPr">@color/textFieldTextLight</item>
+
+        <!-- Text appearance -->
+        <item name="textAppearanceBody1">@style/TextAppearanceBody1</item>
+        <item name="textAppearanceBody2">@style/TextAppearanceBody2</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearanceHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearanceHeadline5</item>
+        <!-- TODO: Update headline6 -->
+        <item name="textAppearanceHeadline6">@style/TextAppearanceHeadline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearanceSubtitle1</item>
+        <item name="textAppearanceCaption">@style/TextAppearanceCaption</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearanceSmall</item>
+        <item name="android:itemTextAppearance">@style/TextAppearanceMenuItem</item>
+        <item name="textAppearanceListItemSmall">@style/TextAppearanceListItemSmall</item>
+        <item name="textAppearanceListItemSecondary">@style/TextAppearanceListItemSecondary</item>
+        <item name="textAppearanceTrackButton">@style/TextAppearanceTrackButton</item>
+
+        <!-- BottomNavigationView -->
+        <item name="bottomNavigationBackground">@color/primaryBackgroundColorLight</item>
+    </style>
+    <style name="AppStarting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primaryBackgroundColorLight</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_bitbuckler</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog_Background" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:textColorSecondary">@color/grayLight</item>
+    </style>
+</resources>

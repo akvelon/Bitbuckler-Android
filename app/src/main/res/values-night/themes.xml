@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 13 July 2021
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Dark application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/azure</item>
+        <item name="colorPrimaryVariant">@color/azureDark</item>
+        <item name="colorOnPrimary">@color/whiteDark</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/cyanLight</item>
+        <item name="colorSecondaryVariant">@color/cyanLight</item>
+
+        <!-- Surface color -->
+        <item name="colorSurface">@color/grayDarkest</item>
+        <item name="colorOnSurface">@color/whiteDark</item>
+
+        <!-- Background color -->
+        <item name="android:colorBackground">@color/grayDarkest</item>
+        <item name="colorBackgroundVariant">@color/backgroundColorDark</item>
+        <item name="changesBackground">@color/textFieldBackgroundLight</item>
+        <item name="colorOnBackground">@color/white60</item>
+        <item name="borderColor">@color/separatorDark</item>
+        <item name="swipeRefreshLayoutProgressSpinnerBackgroundColor">@color/blackLight</item>
+        <item name="fullScreenProgressBackground">@color/white20</item>
+        <item name="menuBackground">@color/separatorDark</item>
+        <item name="toolbarMenuBackground">@color/blackLight</item>
+        <item name="separatorColor">@color/separatorDark</item>
+        <item name="backgroundPrAction">@color/separatorDark</item>
+        <item name="bottomNavigationSeparator">@color/separatorDark</item>
+        <item name="trackButtonBackground">@color/greyBackground</item>
+        <item name="unTrackButtonBackground">@color/greenBackground</item>
+
+        <!-- Text color -->
+        <item name="android:textColorPrimary">@color/whiteDark</item>
+        <item name="android:textColorSecondary">@color/secondaryTextLight</item>
+        <item name="android:textColorTertiary">@color/white40</item>
+        <item name="textColorCodePrimary">@color/whiteSmoke</item>
+        <item name="textColorCodeVariant">@color/white60</item>
+        <item name="errorTextColor">@color/redDark</item>
+        <item name="textColorPrimary">@color/primaryBackgroundColorLight</item>
+        <item name="trackButtonTextColor">@color/white</item>
+
+        <!-- Divider -->
+        <item name="android:listDivider">@color/separatorDark</item>
+        <item name="branchesPopupDivider">@color/blackLight</item>
+
+        <!-- Control Highlight -->
+        <item name="colorControlHighlight">@color/secondaryTextLight</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l" tools:ignore="ObsoleteSdkInt">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Toolbar -->
+        <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
+        <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+
+        <!-- Elevation -->
+        <item name="elevationOverlayEnabled">true</item>
+
+        <!-- Bottom navigation -->
+        <item name="bottomNavigationStyle">@style/BottomNavigation</item>
+
+        <!-- Add comment button -->
+        <item name="addCommentButtonBackground">@color/blackLight</item>
+        <item name="addCommentButtonRipple">@color/secondaryTextLight</item>
+
+        <!-- Skeleton layout -->
+        <item name="skeletonLayoutMaskColor">@color/charcoal</item>
+        <item name="skeletonLayoutShimmerColor">@color/charcoalDark</item>
+
+        <!-- Diff line background -->
+        <item name="colorBackgroundLineAdded">@color/greenDarkMrDiff</item>
+        <item name="colorBackgroundLineConflicted">@color/yellowMetalDark</item>
+        <item name="colorBackgroundLineConflictedSection">@color/yellowMetal</item>
+        <item name="colorBackgroundLineRemoved">@color/redDarkMrDiff</item>
+
+        <!-- Pull Request actions -->
+        <item name="approvedBackground">@color/approvedBackgroundColor</item>
+        <item name="requestChangesBackground">@color/orange</item>
+        <item name="prActionsDefaultBackground">@color/separatorDark</item>
+        <item name="prActionsDefaultTextColor">@color/white</item>
+        <item name="prActionsPressedTextColor">@color/grayLightest</item>
+        <item name="textColorPr">@color/secondaryTextDark</item>
+
+        <!-- Text appearance -->
+        <item name="android:itemTextAppearance">@style/TextAppearanceMenuItem</item>
+        <item name="textAppearanceBody1">@style/TextAppearanceBody1</item>
+        <item name="textAppearanceBody2">@style/TextAppearanceBody2</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearanceHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearanceHeadline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearanceHeadline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearanceSubtitle1</item>
+        <item name="textAppearanceCaption">@style/TextAppearanceCaption</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearanceSmall</item>
+        <item name="textAppearanceListItemSmall">@style/TextAppearanceListItemSmall</item>
+        <item name="textAppearanceListItemSecondary">@style/TextAppearanceListItemSecondary</item>
+        <item name="textAppearanceTrackButton">@style/TextAppearanceTrackButton</item>
+
+        <!-- BottomNavigationView -->
+        <item name="bottomNavigationBackground">@color/backgroundColorDark</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog_Background" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">@color/blackLight</item>
+        <item name="colorAccent">?attr/colorPrimary</item>
+    </style>
+</resources>

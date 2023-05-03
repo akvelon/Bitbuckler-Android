@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 09 February 2021
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bgr_progress_error">
+
+    <TextView
+        android:id="@+id/title"
+        android:text="@string/progress_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginStart="@dimen/spacingNormal" />
+
+    <Button
+        android:id="@+id/reload"
+        android:text="@string/progress_error_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+</FrameLayout>

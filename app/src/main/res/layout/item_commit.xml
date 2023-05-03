@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 12 May 2021
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/iconSizeLarge"
+        android:layout_height="@dimen/iconSizeLarge"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginStart="@dimen/spacingNormal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:textAppearance="?attr/textAppearanceCaption"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constrainedWidth="true"
+        tools:text="@tools:sample/full_names[0]" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        tools:text="Merged in dev"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/commitIcon"
+        android:layout_width="@dimen/iconSizeSmall"
+        android:layout_height="@dimen/iconSizeSmall"
+        android:layout_marginStart="@dimen/spacingNormal"
+        app:srcCompat="@drawable/ic_commit"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@+id/commitHash"
+        app:layout_constraintBottom_toBottomOf="@+id/commitHash"
+        app:tint="?android:attr/textColorPrimary"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/commitHash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/commitIcon"
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        app:layout_constraintEnd_toStartOf="@+id/delimiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="42e0932" />
+
+    <TextView
+        android:id="@+id/delimiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:text="@string/delimiter"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toStartOf="@+id/createdOn"
+        app:layout_constraintStart_toEndOf="@+id/commitHash"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <TextView
+        android:id="@+id/createdOn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginTop="@dimen/spacingTiny"
+        android:layout_marginEnd="@dimen/spacingNormal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/delimiter"
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        tools:text="created 7 days ago" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

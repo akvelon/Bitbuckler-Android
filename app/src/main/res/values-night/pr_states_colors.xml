@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 04 July 2021
+-->
+<resources>
+
+    <!-- Text -->
+    <color name="mergedStateTextColor">@color/mergePrStateLight</color>
+    <color name="openStateTextColor">@color/mainColorLight</color>
+    <color name="declinedStateTextColor">@color/disagree</color>
+    <color name="supersededStateTextColor">@color/grayLightest</color>
+
+    <!-- Background -->
+    <color name="mergedStateBackgroundColor">@color/mergePrStateBackgroundLight</color>
+    <color name="openStateBackgroundColor">@color/prStateBackgroundLight</color>
+    <color name="declinedStateBackgroundColor">@color/disagreeBackground</color>
+    <color name="supersededStateBackgroundColor">@color/grayDark</color>
+
+    <!-- Accent -->
+    <color name="mergedStateAccentColor">@color/greenDarkest</color>
+    <color name="openStateAccentColor">#3D6DCC</color>
+    <color name="declinedStateAccentColor">@color/redDark</color>
+    <color name="supersededStateAccentColor">@color/grayDark</color>
+</resources>

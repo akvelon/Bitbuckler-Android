@@ -1,0 +1,53 @@
+<!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Roman Gromov (roman.gromov@akvelon.com)
+ ~ on 20 November 2020
+-->
+<resources>
+    <!-- padding / margin -->
+    <dimen name="spacingHuge">64dp</dimen>
+    <dimen name="spacingGiant">48dp</dimen>
+    <dimen name="spacingLarge">32dp</dimen>
+    <dimen name="spacingMedium">24dp</dimen>
+    <dimen name="spacingPreMedium">20dp</dimen>
+    <dimen name="spacingNormal">16dp</dimen>
+    <dimen name="spacingPreNormal">12dp</dimen>
+    <dimen name="spacingSmall">8dp</dimen>
+    <dimen name="spacingTiny">4dp</dimen>
+    <dimen name="spacingTiniest">2dp</dimen>
+    <dimen name="spacingZero">0dp</dimen>
+
+    <!-- icon -->
+    <dimen name="iconSizeExtraLarge">50dp</dimen>
+    <dimen name="iconSizeLarge">40dp</dimen>
+    <dimen name="iconSizeMedium">36dp</dimen>
+    <dimen name="iconSizeNormal">24dp</dimen>
+    <dimen name="iconSizeSmall">16dp</dimen>
+    <dimen name="iconSizeTiny">14dp</dimen>
+    <dimen name="iconSizeMini">10dp</dimen>
+
+    <!-- border -->
+    <dimen name="borderTiny">2dp</dimen>
+
+    <!-- stroke -->
+    <dimen name="strokeTiniest">1dp</dimen>
+    <dimen name="strokeTiny">2dp</dimen>
+
+    <!-- elevation -->
+    <dimen name="elevationNormal">8dp</dimen>
+    <dimen name="elevationTiny">2dp</dimen>
+
+    <!-- corner radius -->
+    <dimen name="radiusMedium">32dp</dimen>
+    <dimen name="radiusNormal">16dp</dimen>
+    <dimen name="radiusSmall">8dp</dimen>
+    <dimen name="radiusTiny">4dp</dimen>
+    <dimen name="radiusTiniest">2dp</dimen>
+    <dimen name="admobBannerHeight">50dp</dimen>
+    <dimen name="dialogButtonHeight">56dp</dimen>
+    <dimen name="user_issue_list_height">132dp</dimen>
+    <dimen name="user_pr_list_height">108dp</dimen>
+    <dimen name="user_pr_list_height_expanded">216dp</dimen>
+
+</resources>

@@ -1,0 +1,9 @@
+/**
+ * All rights reserved by Akvelon Inc.
+ *
+ * Created by Roman Gromov (roman.gromov@akvelon.com)
+ * on 07 November 2020
+ */
+
+include ':app'
+rootProject.name = "Bitbuckler"

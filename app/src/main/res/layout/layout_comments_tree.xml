@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on   
+-->
+
+<com.faltenreich.skeletonlayout.SkeletonLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skeletonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:maskColor="?attr/skeletonLayoutMaskColor"
+    app:shimmerColor="?attr/skeletonLayoutShimmerColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/commentsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingNormal"
+            android:text="@string/comments"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:indeterminateTint="?attr/colorOnSurface"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/commentsTitle"
+            app:layout_constraintStart_toEndOf="@+id/commentsTitle"
+            app:layout_constraintTop_toTopOf="@+id/commentsTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewComments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="com.akvelon.bitbuckler.ui.view.PreloadLinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentsTitle"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_comment" />
+
+        <TextView
+            android:id="@+id/tv_reply_to"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:background="@drawable/comment_edit_text_bg"
+            android:paddingVertical="@dimen/spacingTiny"
+            android:paddingStart="@dimen/spacingPreNormal"
+            android:textColor="@color/secondaryTextLight"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/commentTextLayout"
+            app:layout_constraintStart_toStartOf="@id/commentTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewComments"
+            tools:text="@string/replying_to_dummy" />
+
+        <ImageView
+            android:id="@+id/iv_close_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingHorizontal="@dimen/spacingPreNormal"
+            android:src="@drawable/ic_close_reply"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_reply_to"
+            app:layout_constraintEnd_toEndOf="@id/tv_reply_to"
+            app:layout_constraintTop_toTopOf="@id/tv_reply_to"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/accountAvatar"
+            android:layout_width="@dimen/iconSizeMedium"
+            android:layout_height="@dimen/iconSizeMedium"
+            android:layout_marginStart="@dimen/spacingNormal"
+            app:layout_constraintEnd_toStartOf="@id/commentTextLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/commentTextLayout"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/commentTextLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacingPreMedium"
+            android:layout_marginStart="@dimen/spacingNormal"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:paddingBottom="@dimen/spacingPreNormal"
+            app:boxCornerRadiusBottomEnd="@dimen/spacingTiny"
+            app:boxCornerRadiusBottomStart="@dimen/spacingTiny"
+            app:boxStrokeWidth="@dimen/spacingZero"
+            app:boxStrokeWidthFocused="@dimen/spacingZero"
+            app:errorIconDrawable="@null"
+            app:hintEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_comment_action"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/accountAvatar"
+            app:layout_constraintTop_toBottomOf="@id/tv_reply_to">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/commentText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/comment_edit_text_bg"
+                android:hint="@string/pr_comment_button"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:paddingHorizontal="@dimen/spacingNormal"
+                android:paddingVertical="@dimen/spacingSmall"
+                android:scrollHorizontally="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_comment_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingNormal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/commentTextLayout"
+            app:layout_constraintTop_toTopOf="@id/commentTextLayout"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_send"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/emptyError"
+            layout="@layout/layout_error_full_screen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentsTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.faltenreich.skeletonlayout.SkeletonLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 18 February 2021
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:paddingEnd="12dp"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/avatarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="@dimen/spacingSmall"
+        android:background="@drawable/bgr_reviewer_approved"
+        android:padding="@dimen/spacingTiny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/avatars" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginEnd="@dimen/spacingSmall"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollIndicators="none"
+        android:scrollHorizontally="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/avatarLayout"
+        app:layout_constraintStart_toEndOf="@id/avatarLayout"
+        app:layout_constraintTop_toTopOf="@id/avatarLayout"
+        tools:ignore="SmallSp"
+        tools:text="@string/test_two_line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

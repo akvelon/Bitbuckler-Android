@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 13 July 2021
+-->
+<resources>
+    <style name="LoginButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="cornerRadius">@dimen/radiusMedium</item>
+        <item name="android:drawableLeft">@drawable/ic_bitbucket</item>
+        <item name="android:elevation">@dimen/elevationNormal</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:translationZ">@dimen/elevationNormal</item>
+    </style>
+
+    <style name="TrackedButton">
+        <item name="android:background">"@drawable/bgr_tracked_btn"</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textAppearance">"@drawable/bgr_tracked_btn"</item>
+        <item name="android:textColor">"@drawable/bgr_tracked_btn"</item>
+    </style>
+</resources>

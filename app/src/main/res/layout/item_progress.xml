@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ All rights reserved by Akvelon Inc.
+ ~
+ ~ Created by Ignat Krasnov (ignat.krasnov@akvelon.com)
+ ~ on 21 December 2020
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacingNormal">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="@dimen/iconSizeLarge"
+        android:layout_height="@dimen/iconSizeLarge"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/blue"
+        android:indeterminateTintMode="src_atop" />
+
+</FrameLayout>
